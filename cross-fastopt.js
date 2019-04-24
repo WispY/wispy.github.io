@@ -1680,7 +1680,8 @@ function $asArrayOf_Lcross_component_Stage(obj, depth) {
 function $c_Lcross_config$() {
   $c_O.call(this);
   this.BaseScreenSize$1 = null;
-  this.MinScale$1 = 0.0;
+  this.MinScale$1 = 0;
+  this.MaxScale$1 = 0;
   this.AnimationDelay$1 = null
 }
 $c_Lcross_config$.prototype = new $h_O();
@@ -1692,8 +1693,9 @@ function $h_Lcross_config$() {
 $h_Lcross_config$.prototype = $c_Lcross_config$.prototype;
 $c_Lcross_config$.prototype.init___ = (function() {
   $n_Lcross_config$ = this;
-  this.BaseScreenSize$1 = new $c_Lcross_vec$Vec2i().init___I__I(1920, 1080);
-  this.MinScale$1 = 0.6;
+  this.BaseScreenSize$1 = new $c_Lcross_vec$Vec2i().init___I__I(256, 256);
+  this.MinScale$1 = 2;
+  this.MaxScale$1 = 5;
   var this$4 = new $c_s_concurrent_duration_package$DurationInt().init___I(300);
   var unit = $m_ju_concurrent_TimeUnit$().MILLISECONDS$1;
   this.AnimationDelay$1 = $m_s_concurrent_duration_package$DurationInt$().durationIn$extension__I__ju_concurrent_TimeUnit__s_concurrent_duration_FiniteDuration(this$4.scala$concurrent$duration$DurationInt$$n$1, unit);
@@ -2062,7 +2064,8 @@ function $m_Lcross_imp$PointOps$() {
 /** @constructor */
 function $c_Lcross_mvc$Controller() {
   $c_O.call(this);
-  this.model$1 = null
+  this.model$1 = null;
+  this.timer$1 = null
 }
 $c_Lcross_mvc$Controller.prototype = new $h_O();
 $c_Lcross_mvc$Controller.prototype.constructor = $c_Lcross_mvc$Controller;
@@ -2085,12 +2088,26 @@ $c_Lcross_mvc$Controller.prototype.setScreenSize__Lcross_vec$Vec2i__V = (functio
 $c_Lcross_mvc$Controller.prototype.start__s_concurrent_Future = (function() {
   return $m_s_concurrent_Future$().apply__F0__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
     return (function() {
-      $this.bind__p1__V()
+      $m_Lcross_mvc$().log$1.info__T__V("[controller] starting...");
+      $this.timer$1.start__D__F0__V(60.0, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$1) {
+        return (function() {
+          var jsx$1 = $this$1.model$1.tick$1;
+          var this$1 = $this$1.model$1.tick$1;
+          var b = $uJ(this$1.value$1);
+          var bhi = b.hi$2;
+          var lo = ((1 + b.lo$2) | 0);
+          var hi = ((lo === 0) ? ((1 + bhi) | 0) : bhi);
+          jsx$1.write__O__O(new $c_sjsr_RuntimeLong().init___I__I(lo, hi))
+        })
+      })($this)));
+      $this.bind__p1__V();
+      $m_Lcross_mvc$().log$1.info__T__V("[controller] started")
     })
   })(this)), $m_Lcross_mvc$().ec$1)
 });
 $c_Lcross_mvc$Controller.prototype.init___Lcross_mvc$Model = (function(model) {
   this.model$1 = model;
+  this.timer$1 = new $c_Lcross_timer$Timer().init___();
   return this
 });
 var $d_Lcross_mvc$Controller = new $TypeData().initClass({
@@ -2170,6 +2187,45 @@ function $m_Lcross_pixi_EventType$() {
   };
   return $n_Lcross_pixi_EventType$
 }
+/** @constructor */
+function $c_Lcross_timer$Timer() {
+  $c_O.call(this)
+}
+$c_Lcross_timer$Timer.prototype = new $h_O();
+$c_Lcross_timer$Timer.prototype.constructor = $c_Lcross_timer$Timer;
+/** @constructor */
+function $h_Lcross_timer$Timer() {
+  /*<skip>*/
+}
+$h_Lcross_timer$Timer.prototype = $c_Lcross_timer$Timer.prototype;
+$c_Lcross_timer$Timer.prototype.init___ = (function() {
+  return this
+});
+$c_Lcross_timer$Timer.prototype.start__D__F0__V = (function(tps, code) {
+  var t = $m_jl_System$().currentTimeMillis__J();
+  var lo = t.lo$2;
+  var hi = t.hi$2;
+  code.apply__O();
+  var t$1 = $m_jl_System$().currentTimeMillis__J();
+  var lo$1 = t$1.lo$2;
+  var hi$1 = t$1.hi$2;
+  var lo$2 = ((lo$1 - lo) | 0);
+  var hi$2 = ((((-2147483648) ^ lo$2) > ((-2147483648) ^ lo$1)) ? (((-1) + ((hi$1 - hi) | 0)) | 0) : ((hi$1 - hi) | 0));
+  var x = ((1000 / tps) - $m_sjsr_RuntimeLong$().scala$scalajs$runtime$RuntimeLong$$toDouble__I__I__D(lo$2, hi$2));
+  var delay = $uD($g.Math.max(x, 0.0));
+  $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().setTimeout((function(arg$outer, tps$1, code$1) {
+    return (function() {
+      arg$outer.start__D__F0__V(tps$1, code$1)
+    })
+  })(this, tps, code), delay)
+});
+var $d_Lcross_timer$Timer = new $TypeData().initClass({
+  Lcross_timer$Timer: 0
+}, false, "cross.timer$Timer", {
+  Lcross_timer$Timer: 1,
+  O: 1
+});
+$c_Lcross_timer$Timer.prototype.$classData = $d_Lcross_timer$Timer;
 /** @constructor */
 function $c_Lorg_scalajs_dom_package$() {
   $c_O.call(this);
@@ -6588,38 +6644,6 @@ function $m_Lcross_imp$() {
   return $n_Lcross_imp$
 }
 /** @constructor */
-function $c_Lcross_mvc$() {
-  $c_O.call(this);
-  this.ec$1 = null
-}
-$c_Lcross_mvc$.prototype = new $h_O();
-$c_Lcross_mvc$.prototype.constructor = $c_Lcross_mvc$;
-/** @constructor */
-function $h_Lcross_mvc$() {
-  /*<skip>*/
-}
-$h_Lcross_mvc$.prototype = $c_Lcross_mvc$.prototype;
-$c_Lcross_mvc$.prototype.init___ = (function() {
-  $n_Lcross_mvc$ = this;
-  this.ec$1 = $as_s_concurrent_ExecutionContextExecutor($m_s_concurrent_ExecutionContext$Implicits$().global__s_concurrent_ExecutionContext());
-  return this
-});
-var $d_Lcross_mvc$ = new $TypeData().initClass({
-  Lcross_mvc$: 0
-}, false, "cross.mvc$", {
-  Lcross_mvc$: 1,
-  O: 1,
-  Lcross_global$GlobalContext: 1
-});
-$c_Lcross_mvc$.prototype.$classData = $d_Lcross_mvc$;
-var $n_Lcross_mvc$ = (void 0);
-function $m_Lcross_mvc$() {
-  if ((!$n_Lcross_mvc$)) {
-    $n_Lcross_mvc$ = new $c_Lcross_mvc$().init___()
-  };
-  return $n_Lcross_mvc$
-}
-/** @constructor */
 function $c_jl_Number() {
   $c_O.call(this)
 }
@@ -7803,6 +7827,41 @@ function $m_Lcross_logging$BrowserLogApi$() {
     $n_Lcross_logging$BrowserLogApi$ = new $c_Lcross_logging$BrowserLogApi$().init___()
   };
   return $n_Lcross_logging$BrowserLogApi$
+}
+/** @constructor */
+function $c_Lcross_mvc$() {
+  $c_O.call(this);
+  this.log$1 = null;
+  this.ec$1 = null
+}
+$c_Lcross_mvc$.prototype = new $h_O();
+$c_Lcross_mvc$.prototype.constructor = $c_Lcross_mvc$;
+/** @constructor */
+function $h_Lcross_mvc$() {
+  /*<skip>*/
+}
+$h_Lcross_mvc$.prototype = $c_Lcross_mvc$.prototype;
+$c_Lcross_mvc$.prototype.init___ = (function() {
+  $n_Lcross_mvc$ = this;
+  this.ec$1 = $as_s_concurrent_ExecutionContextExecutor($m_s_concurrent_ExecutionContext$Implicits$().global__s_concurrent_ExecutionContext());
+  this.log$1 = $m_Lcross_logging$BrowserLogApi$();
+  return this
+});
+var $d_Lcross_mvc$ = new $TypeData().initClass({
+  Lcross_mvc$: 0
+}, false, "cross.mvc$", {
+  Lcross_mvc$: 1,
+  O: 1,
+  Lcross_global$GlobalContext: 1,
+  Lcross_logging$Logging: 1
+});
+$c_Lcross_mvc$.prototype.$classData = $d_Lcross_mvc$;
+var $n_Lcross_mvc$ = (void 0);
+function $m_Lcross_mvc$() {
+  if ((!$n_Lcross_mvc$)) {
+    $n_Lcross_mvc$ = new $c_Lcross_mvc$().init___()
+  };
+  return $n_Lcross_mvc$
 }
 /** @constructor */
 function $c_Lcross_spring$() {
@@ -10703,6 +10762,7 @@ $c_Lcross_app$.prototype.main__AT__V = (function(args) {
   $f_s_App__main__AT__V(this, args)
 });
 $c_Lcross_app$.prototype.delayedEndpoint$cross$app$1__V = (function() {
+  $g.PIXI.settings.SCALE_MODE = $uD($g.PIXI.SCALE_MODES.NEAREST);
   var jsx$3 = new $c_Lcross_data$Implementation().init___O($m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong());
   var jsx$2 = $m_Lcross_mvc$Model$().apply$default$2__Lcross_data$Writable();
   var jsx$1 = new $c_Lcross_data$Implementation().init___O(1.0);
@@ -12741,16 +12801,7 @@ $c_Lcross_stage_LoadingStage.prototype.fadeIn__Lcross_animation$Animation = (fun
   return new $c_Lcross_animation$FadeIn().init___Lcross_pixi_DisplayObject__Lcross_animation$Ease__s_concurrent_duration_FiniteDuration(a, $m_Lcross_animation$LinearEase$(), $m_Lcross_config$().AnimationDelay$1)
 });
 $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$5__Lcross_pixi_Loader__Lcross_pixi_Resource__Lcross_spring$DoubleSpring__V = (function(load, res, progressSpring$1) {
-  progressSpring$1.target$1 = ($uD(load.progress) / 100);
-  var thiz = $as_T(res.url);
-  var last = $uI(thiz.lastIndexOf("/"));
-  if ((last > 0)) {
-    var thiz$1 = $as_T(res.url);
-    var beginIndex = ((1 + last) | 0);
-    $as_T(thiz$1.substring(beginIndex))
-  } else {
-    $as_T(res.url)
-  }
+  progressSpring$1.target$1 = ($uD(load.progress) / 100)
 });
 $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$1__s_concurrent_Promise__V = (function(promise$1) {
   this.log$1.info__T__V("[loading stage] setting up...");
@@ -12760,7 +12811,7 @@ $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create
   $m_Lcross_imp$();
   var jsx$1 = $m_Lcross_imp$AssetOps$();
   $m_Lcross_imp$();
-  var a = $m_Lcross_asset_ui$().asset$minusloading$minusnormal$1;
+  var a = $m_Lcross_asset_ui$().asset$minusloading$minusdisabled$1;
   var a$1 = jsx$1.sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(a, this.app$1);
   var a$2 = jsx$2.anchorAtCenter$extension__Lcross_pixi_DisplayObject__Lcross_pixi_DisplayObject(a$1);
   jsx$3.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$2, this.pixiBody__Lcross_pixi_Container());
@@ -12771,7 +12822,7 @@ $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create
   $m_Lcross_imp$();
   var jsx$4 = $m_Lcross_imp$AssetOps$();
   $m_Lcross_imp$();
-  var a$3 = $m_Lcross_asset_ui$().asset$minusloading$minusdisabled$1;
+  var a$3 = $m_Lcross_asset_ui$().asset$minusloading$minusnormal$1;
   var a$4 = jsx$4.sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(a$3, this.app$1);
   var a$5 = jsx$5.anchorAtCenter$extension__Lcross_pixi_DisplayObject__Lcross_pixi_DisplayObject(a$4);
   var a$6 = jsx$6.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$5, this.pixiBody__Lcross_pixi_Container());
@@ -12797,7 +12848,7 @@ $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create
   var progressSpring = $as_Lcross_spring$DoubleSpring($m_Lcross_spring$().add__Lcross_spring$Updater__Lcross_spring$Updater(new $c_Lcross_spring$DoubleSpring().init___D__D__F1__D(0.0, 0.0, new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2$1, finish) {
     return (function(s$2) {
       var s = $as_Lcross_spring$DoubleSpring(s$2);
-      finish.mask.scale.y = s.current$1;
+      finish.mask.scale.y = ($doubleToInt((s.current$1 * this$2$1.buttonSize$1.y$1)) / this$2$1.buttonSize$1.y$1);
       if ((s.current$1 > 0.99)) {
         finish.mask.scale.y = 1.0;
         $m_Lcross_spring$().remove__Lcross_spring$Updater__Lcross_spring$Updater(s)
@@ -16154,11 +16205,13 @@ $c_Lcross_mvc$Controller$$anonfun$bind$1.prototype.applyOrElse__O__F1__O = (func
   return this.applyOrElse__Lcross_vec$Vec2i__F1__O($as_Lcross_vec$Vec2i(x), $default)
 });
 $c_Lcross_mvc$Controller$$anonfun$bind$1.prototype.applyOrElse__Lcross_vec$Vec2i__F1__O = (function(x1, $default) {
-  var jsx$1 = this.$$outer$2.model$1.scale$1;
   var x = x1.$$div__Lcross_vec$Vec2i__Lcross_vec$Vec2d($m_Lcross_config$().BaseScreenSize$1).min__D();
-  var x$1 = $uD($g.Math.min(x, 1.0));
-  var that = $m_Lcross_config$().MinScale$1;
-  jsx$1.write__O__O($uD($g.Math.max(x$1, that)))
+  var that = $m_Lcross_config$().MaxScale$1;
+  var x$1 = $uD($g.Math.min(x, that));
+  var that$1 = $m_Lcross_config$().MinScale$1;
+  var scale = $uD($g.Math.max(x$1, that$1));
+  $m_Lcross_mvc$().log$1.info__T__V((((((("size [" + x1) + "] basic [") + x1.$$div__Lcross_vec$Vec2i__Lcross_vec$Vec2d($m_Lcross_config$().BaseScreenSize$1).min__D()) + "] scale [") + scale) + "]"));
+  this.$$outer$2.model$1.scale$1.write__O__O($doubleToInt(scale))
 });
 var $d_Lcross_mvc$Controller$$anonfun$bind$1 = new $TypeData().initClass({
   Lcross_mvc$Controller$$anonfun$bind$1: 0
