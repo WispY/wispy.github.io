@@ -1100,6 +1100,115 @@ function $asArrayOf_F0(obj, depth) {
 function $f_Lcross_animation$Animation__toString__T($thiz) {
   return (($objectGetClass($thiz).getSimpleName__T() + ":") + $thiz.uuid__T())
 }
+function $is_Lcross_component_Component(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcross_component_Component)))
+}
+function $as_Lcross_component_Component(obj) {
+  return (($is_Lcross_component_Component(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "cross.component.Component"))
+}
+function $isArrayOf_Lcross_component_Component(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcross_component_Component)))
+}
+function $asArrayOf_Lcross_component_Component(obj, depth) {
+  return (($isArrayOf_Lcross_component_Component(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcross.component.Component;", depth))
+}
+function $f_Lcross_component_Interactive__onClick__F1__Lcross_component_Interactive($thiz, code) {
+  $thiz.clickHandler$1 = code;
+  return $thiz
+}
+function $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$1__V($thiz) {
+  $thiz.hovering$1 = true;
+  $thiz.hoverHandler$1.apply__O__O($thiz);
+  $thiz.updateVisual__V()
+}
+function $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$3__V($thiz) {
+  $thiz.hovering$1 = false;
+  $thiz.hoverHandler$1.apply__O__O($thiz);
+  $thiz.updateVisual__V()
+}
+function $f_Lcross_component_Interactive__setEnabled__Z__Lcross_component_Interactive($thiz, enabled) {
+  return (enabled ? $f_Lcross_component_Interactive__enable__Lcross_component_Interactive($thiz) : $f_Lcross_component_Interactive__disable__Lcross_component_Interactive($thiz))
+}
+function $f_Lcross_component_Interactive__initInteractions__V($thiz) {
+  $thiz.pixiBackground$1.interactive = true;
+  $thiz.pixiBackground$1.buttonMode = true;
+  $thiz.pixiBackground$1.on($m_Lcross_pixi_EventType$().PointerOver$1, (function(arg$outer) {
+    return (function() {
+      $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$1__V(arg$outer)
+    })
+  })($thiz)).on($m_Lcross_pixi_EventType$().PointerOut$1, (function(arg$outer$1) {
+    return (function() {
+      $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$3__V(arg$outer$1)
+    })
+  })($thiz)).on($m_Lcross_pixi_EventType$().PointerDown$1, (function(arg$outer$2) {
+    return (function() {
+      $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$5__V(arg$outer$2)
+    })
+  })($thiz)).on($m_Lcross_pixi_EventType$().PointerUp$1, (function(arg$outer$3) {
+    return (function() {
+      $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$7__V(arg$outer$3)
+    })
+  })($thiz)).on($m_Lcross_pixi_EventType$().PointerUpOutside$1, (function(arg$outer$4) {
+    return (function() {
+      $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$9__V(arg$outer$4)
+    })
+  })($thiz))
+}
+function $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$5__V($thiz) {
+  $thiz.dragging$1 = true;
+  $thiz.updateVisual__V()
+}
+function $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$7__V($thiz) {
+  $thiz.dragging$1 = false;
+  if ($thiz.enabled$1) {
+    $thiz.clickHandler$1.apply__O__O($thiz)
+  };
+  $thiz.updateVisual__V()
+}
+function $f_Lcross_component_Interactive__cross$component$Interactive$$$anonfun$initInteractions$9__V($thiz) {
+  $thiz.hovering$1 = false;
+  $thiz.dragging$1 = false;
+  $thiz.updateVisual__V()
+}
+function $f_Lcross_component_Interactive__$$init$__V($thiz) {
+  $thiz.enabled$1 = true;
+  $thiz.hovering$1 = false;
+  $thiz.dragging$1 = false;
+  $thiz.clickHandler$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+    return (function(x$1$2) {
+      $as_Lcross_component_Interactive(x$1$2)
+    })
+  })($thiz));
+  $thiz.hoverHandler$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2) {
+    return (function(x$2$2) {
+      $as_Lcross_component_Interactive(x$2$2)
+    })
+  })($thiz))
+}
+function $f_Lcross_component_Interactive__enable__Lcross_component_Interactive($thiz) {
+  $thiz.enabled$1 = true;
+  $thiz.pixiBackground$1.buttonMode = true;
+  $thiz.updateVisual__V();
+  return $thiz
+}
+function $f_Lcross_component_Interactive__disable__Lcross_component_Interactive($thiz) {
+  $thiz.enabled$1 = false;
+  $thiz.pixiBackground$1.buttonMode = false;
+  $thiz.updateVisual__V();
+  return $thiz
+}
+function $is_Lcross_component_Interactive(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcross_component_Interactive)))
+}
+function $as_Lcross_component_Interactive(obj) {
+  return (($is_Lcross_component_Interactive(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "cross.component.Interactive"))
+}
+function $isArrayOf_Lcross_component_Interactive(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcross_component_Interactive)))
+}
+function $asArrayOf_Lcross_component_Interactive(obj, depth) {
+  return (($isArrayOf_Lcross_component_Interactive(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcross.component.Interactive;", depth))
+}
 function $f_Lcross_data$Data__$$div$greater__s_PartialFunction__Lcross_data$Data($thiz, code) {
   var listener = new $c_Lcross_data$Data$$anonfun$1().init___Lcross_data$Data__s_PartialFunction($thiz, code);
   return $thiz.listen__s_PartialFunction__Z__Lcross_data$Data(listener, true)
@@ -1563,6 +1672,119 @@ function $f_scm_HashTable$HashUtils__improve__I__I__I($thiz, hcode, seed) {
   return (((i >>> seed) | 0) | (i << ((-seed) | 0)))
 }
 /** @constructor */
+function $c_Lcross_asset_flower$() {
+  $c_O.call(this);
+  this.flowers$1 = null
+}
+$c_Lcross_asset_flower$.prototype = new $h_O();
+$c_Lcross_asset_flower$.prototype.constructor = $c_Lcross_asset_flower$;
+/** @constructor */
+function $h_Lcross_asset_flower$() {
+  /*<skip>*/
+}
+$h_Lcross_asset_flower$.prototype = $c_Lcross_asset_flower$.prototype;
+$c_Lcross_asset_flower$.prototype.init___ = (function() {
+  $n_Lcross_asset_flower$ = this;
+  $m_sci_List$();
+  $m_sci_List$();
+  var array = [new $c_Lcross_mvc$Asset().init___T("/image/flower-4-1.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-4-2.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-4-3.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-4-4.png")];
+  var i = (((-1) + $uI(array.length)) | 0);
+  var result = $m_sci_Nil$();
+  while ((i >= 0)) {
+    var this$4 = result;
+    var index = i;
+    var x = array[index];
+    result = new $c_sci_$colon$colon().init___O__sci_List(x, this$4);
+    i = (((-1) + i) | 0)
+  };
+  var jsx$5 = result;
+  $m_sci_List$();
+  var array$1 = [new $c_Lcross_mvc$Asset().init___T("/image/flower-5-1.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-5-2.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-5-3.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-5-4.png")];
+  var i$1 = (((-1) + $uI(array$1.length)) | 0);
+  var result$1 = $m_sci_Nil$();
+  while ((i$1 >= 0)) {
+    var this$8 = result$1;
+    var index$1 = i$1;
+    var x$1 = array$1[index$1];
+    result$1 = new $c_sci_$colon$colon().init___O__sci_List(x$1, this$8);
+    i$1 = (((-1) + i$1) | 0)
+  };
+  var jsx$4 = result$1;
+  $m_sci_List$();
+  var array$2 = [new $c_Lcross_mvc$Asset().init___T("/image/flower-6-1.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-6-2.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-6-3.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-6-4.png")];
+  var i$2 = (((-1) + $uI(array$2.length)) | 0);
+  var result$2 = $m_sci_Nil$();
+  while ((i$2 >= 0)) {
+    var this$12 = result$2;
+    var index$2 = i$2;
+    var x$2 = array$2[index$2];
+    result$2 = new $c_sci_$colon$colon().init___O__sci_List(x$2, this$12);
+    i$2 = (((-1) + i$2) | 0)
+  };
+  var jsx$3 = result$2;
+  $m_sci_List$();
+  var array$3 = [new $c_Lcross_mvc$Asset().init___T("/image/flower-1-1.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-1-2.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-1-3.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-1-4.png")];
+  var i$3 = (((-1) + $uI(array$3.length)) | 0);
+  var result$3 = $m_sci_Nil$();
+  while ((i$3 >= 0)) {
+    var this$16 = result$3;
+    var index$3 = i$3;
+    var x$3 = array$3[index$3];
+    result$3 = new $c_sci_$colon$colon().init___O__sci_List(x$3, this$16);
+    i$3 = (((-1) + i$3) | 0)
+  };
+  var jsx$2 = result$3;
+  $m_sci_List$();
+  var array$4 = [new $c_Lcross_mvc$Asset().init___T("/image/flower-2-1.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-2-2.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-2-3.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-2-4.png")];
+  var i$4 = (((-1) + $uI(array$4.length)) | 0);
+  var result$4 = $m_sci_Nil$();
+  while ((i$4 >= 0)) {
+    var this$20 = result$4;
+    var index$4 = i$4;
+    var x$4 = array$4[index$4];
+    result$4 = new $c_sci_$colon$colon().init___O__sci_List(x$4, this$20);
+    i$4 = (((-1) + i$4) | 0)
+  };
+  var jsx$1 = result$4;
+  $m_sci_List$();
+  var array$5 = [new $c_Lcross_mvc$Asset().init___T("/image/flower-3-1.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-3-2.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-3-3.png"), new $c_Lcross_mvc$Asset().init___T("/image/flower-3-4.png")];
+  var i$5 = (((-1) + $uI(array$5.length)) | 0);
+  var result$5 = $m_sci_Nil$();
+  while ((i$5 >= 0)) {
+    var this$24 = result$5;
+    var index$5 = i$5;
+    var x$5 = array$5[index$5];
+    result$5 = new $c_sci_$colon$colon().init___O__sci_List(x$5, this$24);
+    i$5 = (((-1) + i$5) | 0)
+  };
+  var array$6 = [jsx$5, jsx$4, jsx$3, jsx$2, jsx$1, result$5];
+  var i$6 = (((-1) + $uI(array$6.length)) | 0);
+  var result$6 = $m_sci_Nil$();
+  while ((i$6 >= 0)) {
+    var this$28 = result$6;
+    var index$6 = i$6;
+    var x$6 = array$6[index$6];
+    result$6 = new $c_sci_$colon$colon().init___O__sci_List(x$6, this$28);
+    i$6 = (((-1) + i$6) | 0)
+  };
+  this.flowers$1 = result$6;
+  return this
+});
+var $d_Lcross_asset_flower$ = new $TypeData().initClass({
+  Lcross_asset_flower$: 0
+}, false, "cross.asset.flower$", {
+  Lcross_asset_flower$: 1,
+  O: 1
+});
+$c_Lcross_asset_flower$.prototype.$classData = $d_Lcross_asset_flower$;
+var $n_Lcross_asset_flower$ = (void 0);
+function $m_Lcross_asset_flower$() {
+  if ((!$n_Lcross_asset_flower$)) {
+    $n_Lcross_asset_flower$ = new $c_Lcross_asset_flower$().init___()
+  };
+  return $n_Lcross_asset_flower$
+}
+/** @constructor */
 function $c_Lcross_asset_tree$() {
   $c_O.call(this);
   this.branches$1 = null
@@ -1577,17 +1799,379 @@ $h_Lcross_asset_tree$.prototype = $c_Lcross_asset_tree$.prototype;
 $c_Lcross_asset_tree$.prototype.init___ = (function() {
   $n_Lcross_asset_tree$ = this;
   $m_sci_List$();
-  var array = [new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/0L+0-1.png"), 0, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(15, 29), new $c_Lcross_vec$Vec2i().init___I__I(10, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/0R+0-1.png"), 0, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/0S+0-1.png"), 0, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(16, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1L+0-1.png"), 1, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(14, 29), new $c_Lcross_vec$Vec2i().init___I__I(10, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1L+1-1.png"), 1, 1, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(13, 28), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1L-1-1.png"), 1, (-1), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(21, 27), new $c_Lcross_vec$Vec2i().init___I__I(5, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1R+0-1.png"), 1, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(17, 29), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1R+1-1.png"), 1, 1, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(11, 27), new $c_Lcross_vec$Vec2i().init___I__I(26, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1R-1-1.png"), 1, (-1), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(18, 28), new $c_Lcross_vec$Vec2i().init___I__I(10, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1S+0-1.png"), 1, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(16, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1S+1-1.png"), 1, 1, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 28), new $c_Lcross_vec$Vec2i().init___I__I(21, 3), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1S-1-1.png"), 1, (-1), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(10, 3), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L+0-1.png"), 2, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(9, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L+1-1.png"), 2, 1, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(12, 29), new $c_Lcross_vec$Vec2i().init___I__I(19, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L+2-1.png"), 2, 2, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 28), new $c_Lcross_vec$Vec2i().init___I__I(24, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L-1-1.png"), 2, (-1), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(6, 7), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L-2-1.png"), 2, (-2), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(27, 23), new $c_Lcross_vec$Vec2i().init___I__I(4, 9), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R+0-1.png"), 2, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(15, 29), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R+1-1.png"), 2, 1, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(8, 28), new $c_Lcross_vec$Vec2i().init___I__I(25, 7), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R+2-1.png"), 2, 2, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(4, 23), new $c_Lcross_vec$Vec2i().init___I__I(27, 9), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R-1-1.png"), 2, (-1), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(19, 29), new $c_Lcross_vec$Vec2i().init___I__I(12, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R-2-1.png"), 2, (-2), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(7, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S+0-1.png"), 2, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(17, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S+1-1.png"), 2, 1, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 27), new $c_Lcross_vec$Vec2i().init___I__I(21, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S+2-1.png"), 2, 2, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(6, 24), new $c_Lcross_vec$Vec2i().init___I__I(24, 6), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S-1-1.png"), 2, (-1), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 27), new $c_Lcross_vec$Vec2i().init___I__I(10, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S-2-1.png"), 2, (-2), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(25, 24), new $c_Lcross_vec$Vec2i().init___I__I(6, 6), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L+0-1.png"), 3, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(17, 29), new $c_Lcross_vec$Vec2i().init___I__I(13, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L+1-1.png"), 3, 1, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(12, 29), new $c_Lcross_vec$Vec2i().init___I__I(19, 3), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L+2-1.png"), 3, 2, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(8, 25), new $c_Lcross_vec$Vec2i().init___I__I(23, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L+3-1.png"), 3, 3, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(5, 23), new $c_Lcross_vec$Vec2i().init___I__I(27, 7), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L-1-1.png"), 3, (-1), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(23, 26), new $c_Lcross_vec$Vec2i().init___I__I(8, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L-2-1.png"), 3, (-2), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(25, 23), new $c_Lcross_vec$Vec2i().init___I__I(4, 8), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3L-3-1.png"), 3, (-3), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(29, 19), new $c_Lcross_vec$Vec2i().init___I__I(3, 12), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R+0-1.png"), 3, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(14, 29), new $c_Lcross_vec$Vec2i().init___I__I(18, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R+1-1.png"), 3, 1, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(8, 26), new $c_Lcross_vec$Vec2i().init___I__I(24, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R+2-1.png"), 3, 2, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(6, 23), new $c_Lcross_vec$Vec2i().init___I__I(27, 8), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R+3-1.png"), 3, 3, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(2, 19), new $c_Lcross_vec$Vec2i().init___I__I(28, 12), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R-1-1.png"), 3, (-1), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(19, 29), new $c_Lcross_vec$Vec2i().init___I__I(12, 3), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R-2-1.png"), 3, (-2), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(23, 25), new $c_Lcross_vec$Vec2i().init___I__I(8, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3R-3-1.png"), 3, (-3), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(26, 23), new $c_Lcross_vec$Vec2i().init___I__I(4, 7), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S+0-1.png"), 3, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(16, 2), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S+1-1.png"), 3, 1, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 28), new $c_Lcross_vec$Vec2i().init___I__I(20, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S+2-1.png"), 3, 2, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(7, 25), new $c_Lcross_vec$Vec2i().init___I__I(26, 6), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S+3-1.png"), 3, 3, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(3, 22), new $c_Lcross_vec$Vec2i().init___I__I(27, 11), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S-1-1.png"), 3, (-1), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(11, 4), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S-2-1.png"), 3, (-2), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(24, 25), new $c_Lcross_vec$Vec2i().init___I__I(5, 6), $m_sci_Nil$()), new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/3S-3-1.png"), 3, (-3), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(28, 22), new $c_Lcross_vec$Vec2i().init___I__I(4, 11), $m_sci_Nil$())];
+  var jsx$131 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/0L+0-1.png"), 0, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(15, 29), new $c_Lcross_vec$Vec2i().init___I__I(10, 2), $m_sci_Nil$());
+  var jsx$130 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/0R+0-1.png"), 0, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$());
+  var jsx$129 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/0S+0-1.png"), 0, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(16, 2), $m_sci_Nil$());
+  var jsx$128 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1L+0-1.png"), 1, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(14, 29), new $c_Lcross_vec$Vec2i().init___I__I(10, 2), $m_sci_Nil$());
+  var jsx$127 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1L+1-1.png"), 1, 1, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(13, 28), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$());
+  var jsx$126 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1L-1-1.png"), 1, (-1), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(21, 27), new $c_Lcross_vec$Vec2i().init___I__I(5, 4), $m_sci_Nil$());
+  var jsx$125 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1R+0-1.png"), 1, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(17, 29), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$());
+  var jsx$124 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1R+1-1.png"), 1, 1, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(11, 27), new $c_Lcross_vec$Vec2i().init___I__I(26, 4), $m_sci_Nil$());
+  var jsx$123 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1R-1-1.png"), 1, (-1), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(18, 28), new $c_Lcross_vec$Vec2i().init___I__I(10, 2), $m_sci_Nil$());
+  var jsx$122 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1S+0-1.png"), 1, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(16, 2), $m_sci_Nil$());
+  var jsx$121 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1S+1-1.png"), 1, 1, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 28), new $c_Lcross_vec$Vec2i().init___I__I(21, 3), $m_sci_Nil$());
+  var jsx$120 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/1S-1-1.png"), 1, (-1), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(10, 3), $m_sci_Nil$());
+  var jsx$119 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L+0-1.png"), 2, 0, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(9, 2), $m_sci_Nil$());
+  var jsx$118 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L+1-1.png"), 2, 1, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(12, 29), new $c_Lcross_vec$Vec2i().init___I__I(19, 2), $m_sci_Nil$());
+  var jsx$117 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L+2-1.png"), 2, 2, $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 28), new $c_Lcross_vec$Vec2i().init___I__I(24, 4), $m_sci_Nil$());
+  var jsx$116 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L-1-1.png"), 2, (-1), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(6, 7), $m_sci_Nil$());
+  var jsx$115 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2L-2-1.png"), 2, (-2), $m_Lcross_mvc$TreeVariations$().Left$2, new $c_Lcross_vec$Vec2i().init___I__I(27, 23), new $c_Lcross_vec$Vec2i().init___I__I(4, 9), $m_sci_Nil$());
+  var jsx$114 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R+0-1.png"), 2, 0, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(15, 29), new $c_Lcross_vec$Vec2i().init___I__I(21, 2), $m_sci_Nil$());
+  var jsx$113 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R+1-1.png"), 2, 1, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(8, 28), new $c_Lcross_vec$Vec2i().init___I__I(25, 7), $m_sci_Nil$());
+  var jsx$112 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R+2-1.png"), 2, 2, $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(4, 23), new $c_Lcross_vec$Vec2i().init___I__I(27, 9), $m_sci_Nil$());
+  var jsx$111 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R-1-1.png"), 2, (-1), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(19, 29), new $c_Lcross_vec$Vec2i().init___I__I(12, 2), $m_sci_Nil$());
+  var jsx$110 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2R-2-1.png"), 2, (-2), $m_Lcross_mvc$TreeVariations$().Right$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 28), new $c_Lcross_vec$Vec2i().init___I__I(7, 4), $m_sci_Nil$());
+  var jsx$109 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S+0-1.png"), 2, 0, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(16, 29), new $c_Lcross_vec$Vec2i().init___I__I(17, 2), $m_sci_Nil$());
+  var jsx$108 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S+1-1.png"), 2, 1, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(9, 27), new $c_Lcross_vec$Vec2i().init___I__I(21, 4), $m_sci_Nil$());
+  var jsx$107 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S+2-1.png"), 2, 2, $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(6, 24), new $c_Lcross_vec$Vec2i().init___I__I(24, 6), $m_sci_Nil$());
+  var jsx$106 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S-1-1.png"), 2, (-1), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(22, 27), new $c_Lcross_vec$Vec2i().init___I__I(10, 4), $m_sci_Nil$());
+  var jsx$105 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(new $c_Lcross_mvc$Asset().init___T("/image/2S-2-1.png"), 2, (-2), $m_Lcross_mvc$TreeVariations$().Straight$2, new $c_Lcross_vec$Vec2i().init___I__I(25, 24), new $c_Lcross_vec$Vec2i().init___I__I(6, 6), $m_sci_Nil$());
+  var jsx$104 = new $c_Lcross_mvc$Asset().init___T("/image/3L+0-1.png");
+  var jsx$103 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$102 = new $c_Lcross_vec$Vec2i().init___I__I(17, 29);
+  var jsx$101 = new $c_Lcross_vec$Vec2i().init___I__I(13, 2);
+  $m_sci_List$();
+  var array = [new $c_Lcross_vec$Vec2i().init___I__I(11, 4), new $c_Lcross_vec$Vec2i().init___I__I(13, 16)];
   var i = (((-1) + $uI(array.length)) | 0);
   var result = $m_sci_Nil$();
   while ((i >= 0)) {
-    var this$196 = result;
+    var this$120 = result;
     var index = i;
     var x = array[index];
-    result = new $c_sci_$colon$colon().init___O__sci_List(x, this$196);
+    result = new $c_sci_$colon$colon().init___O__sci_List(x, this$120);
     i = (((-1) + i) | 0)
   };
-  this.branches$1 = result;
+  var jsx$100 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$104, 3, 0, jsx$103, jsx$102, jsx$101, result);
+  var jsx$99 = new $c_Lcross_mvc$Asset().init___T("/image/3L+1-1.png");
+  var jsx$98 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$97 = new $c_Lcross_vec$Vec2i().init___I__I(12, 29);
+  var jsx$96 = new $c_Lcross_vec$Vec2i().init___I__I(19, 3);
+  $m_sci_List$();
+  var array$1 = [new $c_Lcross_vec$Vec2i().init___I__I(10, 20), new $c_Lcross_vec$Vec2i().init___I__I(14, 12), new $c_Lcross_vec$Vec2i().init___I__I(19, 7)];
+  var i$1 = (((-1) + $uI(array$1.length)) | 0);
+  var result$1 = $m_sci_Nil$();
+  while ((i$1 >= 0)) {
+    var this$134 = result$1;
+    var index$1 = i$1;
+    var x$1 = array$1[index$1];
+    result$1 = new $c_sci_$colon$colon().init___O__sci_List(x$1, this$134);
+    i$1 = (((-1) + i$1) | 0)
+  };
+  var jsx$95 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$99, 3, 1, jsx$98, jsx$97, jsx$96, result$1);
+  var jsx$94 = new $c_Lcross_mvc$Asset().init___T("/image/3L+2-1.png");
+  var jsx$93 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$92 = new $c_Lcross_vec$Vec2i().init___I__I(8, 25);
+  var jsx$91 = new $c_Lcross_vec$Vec2i().init___I__I(23, 4);
+  $m_sci_List$();
+  var array$2 = [new $c_Lcross_vec$Vec2i().init___I__I(9, 16), new $c_Lcross_vec$Vec2i().init___I__I(17, 13), new $c_Lcross_vec$Vec2i().init___I__I(21, 6)];
+  var i$2 = (((-1) + $uI(array$2.length)) | 0);
+  var result$2 = $m_sci_Nil$();
+  while ((i$2 >= 0)) {
+    var this$148 = result$2;
+    var index$2 = i$2;
+    var x$2 = array$2[index$2];
+    result$2 = new $c_sci_$colon$colon().init___O__sci_List(x$2, this$148);
+    i$2 = (((-1) + i$2) | 0)
+  };
+  var jsx$90 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$94, 3, 2, jsx$93, jsx$92, jsx$91, result$2);
+  var jsx$89 = new $c_Lcross_mvc$Asset().init___T("/image/3L+3-1.png");
+  var jsx$88 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$87 = new $c_Lcross_vec$Vec2i().init___I__I(5, 23);
+  var jsx$86 = new $c_Lcross_vec$Vec2i().init___I__I(27, 7);
+  $m_sci_List$();
+  var array$3 = [new $c_Lcross_vec$Vec2i().init___I__I(14, 16), new $c_Lcross_vec$Vec2i().init___I__I(21, 8)];
+  var i$3 = (((-1) + $uI(array$3.length)) | 0);
+  var result$3 = $m_sci_Nil$();
+  while ((i$3 >= 0)) {
+    var this$160 = result$3;
+    var index$3 = i$3;
+    var x$3 = array$3[index$3];
+    result$3 = new $c_sci_$colon$colon().init___O__sci_List(x$3, this$160);
+    i$3 = (((-1) + i$3) | 0)
+  };
+  var jsx$85 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$89, 3, 3, jsx$88, jsx$87, jsx$86, result$3);
+  var jsx$84 = new $c_Lcross_mvc$Asset().init___T("/image/3L-1-1.png");
+  var jsx$83 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$82 = new $c_Lcross_vec$Vec2i().init___I__I(23, 26);
+  var jsx$81 = new $c_Lcross_vec$Vec2i().init___I__I(8, 4);
+  $m_sci_List$();
+  var array$4 = [new $c_Lcross_vec$Vec2i().init___I__I(11, 8), new $c_Lcross_vec$Vec2i().init___I__I(14, 19)];
+  var i$4 = (((-1) + $uI(array$4.length)) | 0);
+  var result$4 = $m_sci_Nil$();
+  while ((i$4 >= 0)) {
+    var this$172 = result$4;
+    var index$4 = i$4;
+    var x$4 = array$4[index$4];
+    result$4 = new $c_sci_$colon$colon().init___O__sci_List(x$4, this$172);
+    i$4 = (((-1) + i$4) | 0)
+  };
+  var jsx$80 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$84, 3, (-1), jsx$83, jsx$82, jsx$81, result$4);
+  var jsx$79 = new $c_Lcross_mvc$Asset().init___T("/image/3L-2-1.png");
+  var jsx$78 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$77 = new $c_Lcross_vec$Vec2i().init___I__I(25, 23);
+  var jsx$76 = new $c_Lcross_vec$Vec2i().init___I__I(4, 8);
+  $m_sci_List$();
+  var array$5 = [new $c_Lcross_vec$Vec2i().init___I__I(6, 11), new $c_Lcross_vec$Vec2i().init___I__I(17, 16)];
+  var i$5 = (((-1) + $uI(array$5.length)) | 0);
+  var result$5 = $m_sci_Nil$();
+  while ((i$5 >= 0)) {
+    var this$184 = result$5;
+    var index$5 = i$5;
+    var x$5 = array$5[index$5];
+    result$5 = new $c_sci_$colon$colon().init___O__sci_List(x$5, this$184);
+    i$5 = (((-1) + i$5) | 0)
+  };
+  var jsx$75 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$79, 3, (-2), jsx$78, jsx$77, jsx$76, result$5);
+  var jsx$74 = new $c_Lcross_mvc$Asset().init___T("/image/3L-3-1.png");
+  var jsx$73 = $m_Lcross_mvc$TreeVariations$().Left$2;
+  var jsx$72 = new $c_Lcross_vec$Vec2i().init___I__I(29, 19);
+  var jsx$71 = new $c_Lcross_vec$Vec2i().init___I__I(3, 12);
+  $m_sci_List$();
+  var array$6 = [new $c_Lcross_vec$Vec2i().init___I__I(8, 12), new $c_Lcross_vec$Vec2i().init___I__I(15, 20)];
+  var i$6 = (((-1) + $uI(array$6.length)) | 0);
+  var result$6 = $m_sci_Nil$();
+  while ((i$6 >= 0)) {
+    var this$196 = result$6;
+    var index$6 = i$6;
+    var x$6 = array$6[index$6];
+    result$6 = new $c_sci_$colon$colon().init___O__sci_List(x$6, this$196);
+    i$6 = (((-1) + i$6) | 0)
+  };
+  var jsx$70 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$74, 3, (-3), jsx$73, jsx$72, jsx$71, result$6);
+  var jsx$69 = new $c_Lcross_mvc$Asset().init___T("/image/3R+0-1.png");
+  var jsx$68 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$67 = new $c_Lcross_vec$Vec2i().init___I__I(14, 29);
+  var jsx$66 = new $c_Lcross_vec$Vec2i().init___I__I(18, 2);
+  $m_sci_List$();
+  var array$7 = [new $c_Lcross_vec$Vec2i().init___I__I(16, 16), new $c_Lcross_vec$Vec2i().init___I__I(19, 3)];
+  var i$7 = (((-1) + $uI(array$7.length)) | 0);
+  var result$7 = $m_sci_Nil$();
+  while ((i$7 >= 0)) {
+    var this$208 = result$7;
+    var index$7 = i$7;
+    var x$7 = array$7[index$7];
+    result$7 = new $c_sci_$colon$colon().init___O__sci_List(x$7, this$208);
+    i$7 = (((-1) + i$7) | 0)
+  };
+  var jsx$65 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$69, 3, 0, jsx$68, jsx$67, jsx$66, result$7);
+  var jsx$64 = new $c_Lcross_mvc$Asset().init___T("/image/3R+1-1.png");
+  var jsx$63 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$62 = new $c_Lcross_vec$Vec2i().init___I__I(8, 26);
+  var jsx$61 = new $c_Lcross_vec$Vec2i().init___I__I(24, 4);
+  $m_sci_List$();
+  var array$8 = [new $c_Lcross_vec$Vec2i().init___I__I(21, 13), new $c_Lcross_vec$Vec2i().init___I__I(22, 5)];
+  var i$8 = (((-1) + $uI(array$8.length)) | 0);
+  var result$8 = $m_sci_Nil$();
+  while ((i$8 >= 0)) {
+    var this$220 = result$8;
+    var index$8 = i$8;
+    var x$8 = array$8[index$8];
+    result$8 = new $c_sci_$colon$colon().init___O__sci_List(x$8, this$220);
+    i$8 = (((-1) + i$8) | 0)
+  };
+  var jsx$60 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$64, 3, 1, jsx$63, jsx$62, jsx$61, result$8);
+  var jsx$59 = new $c_Lcross_mvc$Asset().init___T("/image/3R+2-1.png");
+  var jsx$58 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$57 = new $c_Lcross_vec$Vec2i().init___I__I(6, 23);
+  var jsx$56 = new $c_Lcross_vec$Vec2i().init___I__I(27, 8);
+  $m_sci_List$();
+  var array$9 = [new $c_Lcross_vec$Vec2i().init___I__I(18, 18), new $c_Lcross_vec$Vec2i().init___I__I(26, 11)];
+  var i$9 = (((-1) + $uI(array$9.length)) | 0);
+  var result$9 = $m_sci_Nil$();
+  while ((i$9 >= 0)) {
+    var this$232 = result$9;
+    var index$9 = i$9;
+    var x$9 = array$9[index$9];
+    result$9 = new $c_sci_$colon$colon().init___O__sci_List(x$9, this$232);
+    i$9 = (((-1) + i$9) | 0)
+  };
+  var jsx$55 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$59, 3, 2, jsx$58, jsx$57, jsx$56, result$9);
+  var jsx$54 = new $c_Lcross_mvc$Asset().init___T("/image/3R+3-1.png");
+  var jsx$53 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$52 = new $c_Lcross_vec$Vec2i().init___I__I(2, 19);
+  var jsx$51 = new $c_Lcross_vec$Vec2i().init___I__I(28, 12);
+  $m_sci_List$();
+  var array$10 = [new $c_Lcross_vec$Vec2i().init___I__I(17, 19), new $c_Lcross_vec$Vec2i().init___I__I(23, 13)];
+  var i$10 = (((-1) + $uI(array$10.length)) | 0);
+  var result$10 = $m_sci_Nil$();
+  while ((i$10 >= 0)) {
+    var this$244 = result$10;
+    var index$10 = i$10;
+    var x$10 = array$10[index$10];
+    result$10 = new $c_sci_$colon$colon().init___O__sci_List(x$10, this$244);
+    i$10 = (((-1) + i$10) | 0)
+  };
+  var jsx$50 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$54, 3, 3, jsx$53, jsx$52, jsx$51, result$10);
+  var jsx$49 = new $c_Lcross_mvc$Asset().init___T("/image/3R-1-1.png");
+  var jsx$48 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$47 = new $c_Lcross_vec$Vec2i().init___I__I(19, 29);
+  var jsx$46 = new $c_Lcross_vec$Vec2i().init___I__I(12, 3);
+  $m_sci_List$();
+  var array$11 = [new $c_Lcross_vec$Vec2i().init___I__I(14, 9), new $c_Lcross_vec$Vec2i().init___I__I(15, 4), new $c_Lcross_vec$Vec2i().init___I__I(18, 15)];
+  var i$11 = (((-1) + $uI(array$11.length)) | 0);
+  var result$11 = $m_sci_Nil$();
+  while ((i$11 >= 0)) {
+    var this$258 = result$11;
+    var index$11 = i$11;
+    var x$11 = array$11[index$11];
+    result$11 = new $c_sci_$colon$colon().init___O__sci_List(x$11, this$258);
+    i$11 = (((-1) + i$11) | 0)
+  };
+  var jsx$45 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$49, 3, (-1), jsx$48, jsx$47, jsx$46, result$11);
+  var jsx$44 = new $c_Lcross_mvc$Asset().init___T("/image/3R-2-1.png");
+  var jsx$43 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$42 = new $c_Lcross_vec$Vec2i().init___I__I(23, 25);
+  var jsx$41 = new $c_Lcross_vec$Vec2i().init___I__I(8, 4);
+  $m_sci_List$();
+  var array$12 = [new $c_Lcross_vec$Vec2i().init___I__I(9, 4), new $c_Lcross_vec$Vec2i().init___I__I(15, 12), new $c_Lcross_vec$Vec2i().init___I__I(20, 14)];
+  var i$12 = (((-1) + $uI(array$12.length)) | 0);
+  var result$12 = $m_sci_Nil$();
+  while ((i$12 >= 0)) {
+    var this$272 = result$12;
+    var index$12 = i$12;
+    var x$12 = array$12[index$12];
+    result$12 = new $c_sci_$colon$colon().init___O__sci_List(x$12, this$272);
+    i$12 = (((-1) + i$12) | 0)
+  };
+  var jsx$40 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$44, 3, (-2), jsx$43, jsx$42, jsx$41, result$12);
+  var jsx$39 = new $c_Lcross_mvc$Asset().init___T("/image/3R-3-1.png");
+  var jsx$38 = $m_Lcross_mvc$TreeVariations$().Right$2;
+  var jsx$37 = new $c_Lcross_vec$Vec2i().init___I__I(26, 23);
+  var jsx$36 = new $c_Lcross_vec$Vec2i().init___I__I(4, 7);
+  $m_sci_List$();
+  var array$13 = [new $c_Lcross_vec$Vec2i().init___I__I(5, 9), new $c_Lcross_vec$Vec2i().init___I__I(13, 9), new $c_Lcross_vec$Vec2i().init___I__I(19, 17)];
+  var i$13 = (((-1) + $uI(array$13.length)) | 0);
+  var result$13 = $m_sci_Nil$();
+  while ((i$13 >= 0)) {
+    var this$286 = result$13;
+    var index$13 = i$13;
+    var x$13 = array$13[index$13];
+    result$13 = new $c_sci_$colon$colon().init___O__sci_List(x$13, this$286);
+    i$13 = (((-1) + i$13) | 0)
+  };
+  var jsx$35 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$39, 3, (-3), jsx$38, jsx$37, jsx$36, result$13);
+  var jsx$34 = new $c_Lcross_mvc$Asset().init___T("/image/3S+0-1.png");
+  var jsx$33 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$32 = new $c_Lcross_vec$Vec2i().init___I__I(16, 29);
+  var jsx$31 = new $c_Lcross_vec$Vec2i().init___I__I(16, 2);
+  $m_sci_List$();
+  var array$14 = [new $c_Lcross_vec$Vec2i().init___I__I(14, 14), new $c_Lcross_vec$Vec2i().init___I__I(17, 6)];
+  var i$14 = (((-1) + $uI(array$14.length)) | 0);
+  var result$14 = $m_sci_Nil$();
+  while ((i$14 >= 0)) {
+    var this$298 = result$14;
+    var index$14 = i$14;
+    var x$14 = array$14[index$14];
+    result$14 = new $c_sci_$colon$colon().init___O__sci_List(x$14, this$298);
+    i$14 = (((-1) + i$14) | 0)
+  };
+  var jsx$30 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$34, 3, 0, jsx$33, jsx$32, jsx$31, result$14);
+  var jsx$29 = new $c_Lcross_mvc$Asset().init___T("/image/3S+1-1.png");
+  var jsx$28 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$27 = new $c_Lcross_vec$Vec2i().init___I__I(9, 28);
+  var jsx$26 = new $c_Lcross_vec$Vec2i().init___I__I(20, 4);
+  $m_sci_List$();
+  var array$15 = [new $c_Lcross_vec$Vec2i().init___I__I(17, 16), new $c_Lcross_vec$Vec2i().init___I__I(19, 6)];
+  var i$15 = (((-1) + $uI(array$15.length)) | 0);
+  var result$15 = $m_sci_Nil$();
+  while ((i$15 >= 0)) {
+    var this$310 = result$15;
+    var index$15 = i$15;
+    var x$15 = array$15[index$15];
+    result$15 = new $c_sci_$colon$colon().init___O__sci_List(x$15, this$310);
+    i$15 = (((-1) + i$15) | 0)
+  };
+  var jsx$25 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$29, 3, 1, jsx$28, jsx$27, jsx$26, result$15);
+  var jsx$24 = new $c_Lcross_mvc$Asset().init___T("/image/3S+2-1.png");
+  var jsx$23 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$22 = new $c_Lcross_vec$Vec2i().init___I__I(7, 25);
+  var jsx$21 = new $c_Lcross_vec$Vec2i().init___I__I(26, 6);
+  $m_sci_List$();
+  var array$16 = [new $c_Lcross_vec$Vec2i().init___I__I(17, 18), new $c_Lcross_vec$Vec2i().init___I__I(20, 9), new $c_Lcross_vec$Vec2i().init___I__I(25, 7)];
+  var i$16 = (((-1) + $uI(array$16.length)) | 0);
+  var result$16 = $m_sci_Nil$();
+  while ((i$16 >= 0)) {
+    var this$324 = result$16;
+    var index$16 = i$16;
+    var x$16 = array$16[index$16];
+    result$16 = new $c_sci_$colon$colon().init___O__sci_List(x$16, this$324);
+    i$16 = (((-1) + i$16) | 0)
+  };
+  var jsx$20 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$24, 3, 2, jsx$23, jsx$22, jsx$21, result$16);
+  var jsx$19 = new $c_Lcross_mvc$Asset().init___T("/image/3S+3-1.png");
+  var jsx$18 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$17 = new $c_Lcross_vec$Vec2i().init___I__I(3, 22);
+  var jsx$16 = new $c_Lcross_vec$Vec2i().init___I__I(27, 11);
+  $m_sci_List$();
+  var array$17 = [new $c_Lcross_vec$Vec2i().init___I__I(16, 18), new $c_Lcross_vec$Vec2i().init___I__I(22, 10)];
+  var i$17 = (((-1) + $uI(array$17.length)) | 0);
+  var result$17 = $m_sci_Nil$();
+  while ((i$17 >= 0)) {
+    var this$336 = result$17;
+    var index$17 = i$17;
+    var x$17 = array$17[index$17];
+    result$17 = new $c_sci_$colon$colon().init___O__sci_List(x$17, this$336);
+    i$17 = (((-1) + i$17) | 0)
+  };
+  var jsx$15 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$19, 3, 3, jsx$18, jsx$17, jsx$16, result$17);
+  var jsx$14 = new $c_Lcross_mvc$Asset().init___T("/image/3S-1-1.png");
+  var jsx$13 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$12 = new $c_Lcross_vec$Vec2i().init___I__I(22, 28);
+  var jsx$11 = new $c_Lcross_vec$Vec2i().init___I__I(11, 4);
+  $m_sci_List$();
+  var array$18 = [new $c_Lcross_vec$Vec2i().init___I__I(12, 6), new $c_Lcross_vec$Vec2i().init___I__I(14, 15)];
+  var i$18 = (((-1) + $uI(array$18.length)) | 0);
+  var result$18 = $m_sci_Nil$();
+  while ((i$18 >= 0)) {
+    var this$348 = result$18;
+    var index$18 = i$18;
+    var x$18 = array$18[index$18];
+    result$18 = new $c_sci_$colon$colon().init___O__sci_List(x$18, this$348);
+    i$18 = (((-1) + i$18) | 0)
+  };
+  var jsx$10 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$14, 3, (-1), jsx$13, jsx$12, jsx$11, result$18);
+  var jsx$9 = new $c_Lcross_mvc$Asset().init___T("/image/3S-2-1.png");
+  var jsx$8 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$7 = new $c_Lcross_vec$Vec2i().init___I__I(24, 25);
+  var jsx$6 = new $c_Lcross_vec$Vec2i().init___I__I(5, 6);
+  $m_sci_List$();
+  var array$19 = [new $c_Lcross_vec$Vec2i().init___I__I(7, 8), new $c_Lcross_vec$Vec2i().init___I__I(13, 12), new $c_Lcross_vec$Vec2i().init___I__I(16, 19)];
+  var i$19 = (((-1) + $uI(array$19.length)) | 0);
+  var result$19 = $m_sci_Nil$();
+  while ((i$19 >= 0)) {
+    var this$362 = result$19;
+    var index$19 = i$19;
+    var x$19 = array$19[index$19];
+    result$19 = new $c_sci_$colon$colon().init___O__sci_List(x$19, this$362);
+    i$19 = (((-1) + i$19) | 0)
+  };
+  var jsx$5 = new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$9, 3, (-2), jsx$8, jsx$7, jsx$6, result$19);
+  var jsx$4 = new $c_Lcross_mvc$Asset().init___T("/image/3S-3-1.png");
+  var jsx$3 = $m_Lcross_mvc$TreeVariations$().Straight$2;
+  var jsx$2 = new $c_Lcross_vec$Vec2i().init___I__I(28, 22);
+  var jsx$1 = new $c_Lcross_vec$Vec2i().init___I__I(4, 11);
+  $m_sci_List$();
+  var array$20 = [new $c_Lcross_vec$Vec2i().init___I__I(5, 13), new $c_Lcross_vec$Vec2i().init___I__I(11, 13), new $c_Lcross_vec$Vec2i().init___I__I(16, 18)];
+  var i$20 = (((-1) + $uI(array$20.length)) | 0);
+  var result$20 = $m_sci_Nil$();
+  while ((i$20 >= 0)) {
+    var this$376 = result$20;
+    var index$20 = i$20;
+    var x$20 = array$20[index$20];
+    result$20 = new $c_sci_$colon$colon().init___O__sci_List(x$20, this$376);
+    i$20 = (((-1) + i$20) | 0)
+  };
+  var array$21 = [jsx$131, jsx$130, jsx$129, jsx$128, jsx$127, jsx$126, jsx$125, jsx$124, jsx$123, jsx$122, jsx$121, jsx$120, jsx$119, jsx$118, jsx$117, jsx$116, jsx$115, jsx$114, jsx$113, jsx$112, jsx$111, jsx$110, jsx$109, jsx$108, jsx$107, jsx$106, jsx$105, jsx$100, jsx$95, jsx$90, jsx$85, jsx$80, jsx$75, jsx$70, jsx$65, jsx$60, jsx$55, jsx$50, jsx$45, jsx$40, jsx$35, jsx$30, jsx$25, jsx$20, jsx$15, jsx$10, jsx$5, new $c_Lcross_mvc$TreeAsset().init___Lcross_mvc$Asset__I__I__s_Enumeration$Value__Lcross_vec$Vec2i__Lcross_vec$Vec2i__sci_List(jsx$4, 3, (-3), jsx$3, jsx$2, jsx$1, result$20)];
+  var i$21 = (((-1) + $uI(array$21.length)) | 0);
+  var result$21 = $m_sci_Nil$();
+  while ((i$21 >= 0)) {
+    var this$380 = result$21;
+    var index$21 = i$21;
+    var x$21 = array$21[index$21];
+    result$21 = new $c_sci_$colon$colon().init___O__sci_List(x$21, this$380);
+    i$21 = (((-1) + i$21) | 0)
+  };
+  this.branches$1 = result$21;
   return this
 });
 var $d_Lcross_asset_tree$ = new $TypeData().initClass({
@@ -1612,8 +2196,11 @@ function $c_Lcross_asset_ui$() {
   this.asset$minusprogress$minusempty$1 = null;
   this.asset$minusprogress$minusfull$1 = null;
   this.asset$minusprogress$minusshine$1 = null;
+  this.asset$minussky$1 = null;
+  this.asset$minusstart$minushover$1 = null;
   this.asset$minusstart$minusnormal$1 = null;
   this.asset$minusstart$minuspressed$1 = null;
+  this.asset$minustree$minushover$1 = null;
   this.asset$minustree$minusnormal$1 = null;
   this.asset$minustree$minuspressed$1 = null;
   this.all$1 = null
@@ -1632,12 +2219,15 @@ $c_Lcross_asset_ui$.prototype.init___ = (function() {
   this.asset$minusprogress$minusempty$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-progress-empty.png");
   this.asset$minusprogress$minusfull$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-progress-full.png");
   this.asset$minusprogress$minusshine$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-progress-shine.png");
+  this.asset$minussky$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-sky.png");
+  this.asset$minusstart$minushover$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-start-hover.png");
   this.asset$minusstart$minusnormal$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-start-normal.png");
   this.asset$minusstart$minuspressed$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-start-pressed.png");
+  this.asset$minustree$minushover$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-tree-hover.png");
   this.asset$minustree$minusnormal$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-tree-normal.png");
   this.asset$minustree$minuspressed$1 = new $c_Lcross_mvc$Asset().init___T("/image/asset-tree-pressed.png");
   $m_sci_List$();
-  var array = [this.asset$minusloading$minusdisabled$1, this.asset$minusloading$minusnormal$1, this.asset$minusprogress$minusempty$1, this.asset$minusprogress$minusfull$1, this.asset$minusprogress$minusshine$1, this.asset$minusstart$minusnormal$1, this.asset$minusstart$minuspressed$1, this.asset$minustree$minusnormal$1, this.asset$minustree$minuspressed$1];
+  var array = [this.asset$minusloading$minusdisabled$1, this.asset$minusloading$minusnormal$1, this.asset$minusprogress$minusempty$1, this.asset$minusprogress$minusfull$1, this.asset$minusprogress$minusshine$1, this.asset$minussky$1, this.asset$minusstart$minushover$1, this.asset$minusstart$minusnormal$1, this.asset$minusstart$minuspressed$1, this.asset$minustree$minushover$1, this.asset$minustree$minusnormal$1, this.asset$minustree$minuspressed$1];
   var i = (((-1) + $uI(array.length)) | 0);
   var result = $m_sci_Nil$();
   while ((i >= 0)) {
@@ -1682,6 +2272,10 @@ function $c_Lcross_config$() {
   this.BaseScreenSize$1 = null;
   this.MinScale$1 = 0;
   this.MaxScale$1 = 0;
+  this.FlowerClusterSpread$1 = 0;
+  this.FlowerClusterMinCount$1 = 0;
+  this.FlowerClusterMaxCount$1 = 0;
+  this.FlowerAnimationDelay$1 = 0;
   this.AnimationDelay$1 = null
 }
 $c_Lcross_config$.prototype = new $h_O();
@@ -1694,8 +2288,12 @@ $h_Lcross_config$.prototype = $c_Lcross_config$.prototype;
 $c_Lcross_config$.prototype.init___ = (function() {
   $n_Lcross_config$ = this;
   this.BaseScreenSize$1 = new $c_Lcross_vec$Vec2i().init___I__I(256, 256);
-  this.MinScale$1 = 2;
+  this.MinScale$1 = 1;
   this.MaxScale$1 = 5;
+  this.FlowerClusterSpread$1 = 5;
+  this.FlowerClusterMinCount$1 = 2;
+  this.FlowerClusterMaxCount$1 = 4;
+  this.FlowerAnimationDelay$1 = 5;
   var this$4 = new $c_s_concurrent_duration_package$DurationInt().init___I(300);
   var unit = $m_ju_concurrent_TimeUnit$().MILLISECONDS$1;
   this.AnimationDelay$1 = $m_s_concurrent_duration_package$DurationInt$().durationIn$extension__I__ju_concurrent_TimeUnit__s_concurrent_duration_FiniteDuration(this$4.scala$concurrent$duration$DurationInt$$n$1, unit);
@@ -1874,6 +2472,19 @@ $h_Lcross_imp$ContainerOps$.prototype = $c_Lcross_imp$ContainerOps$.prototype;
 $c_Lcross_imp$ContainerOps$.prototype.init___ = (function() {
   return this
 });
+$c_Lcross_imp$ContainerOps$.prototype.removeChildren$extension__Lcross_pixi_Container__Lcross_pixi_Container = (function($$this) {
+  while (true) {
+    var array = $$this.children;
+    if (($uI(array.length) !== 0)) {
+      var array$1 = $$this.children;
+      var this$5 = new $c_sjs_js_ArrayOps().init___sjs_js_Array(array$1);
+      $$this.removeChild($f_sc_IndexedSeqOptimized__head__O(this$5))
+    } else {
+      break
+    }
+  };
+  return $$this
+});
 $c_Lcross_imp$ContainerOps$.prototype.sub$extension__Lcross_pixi_Container__Lcross_pixi_Container = (function($$this) {
   var jsx$1 = $m_Lcross_imp$DisplayObjectOps$();
   $m_Lcross_imp$();
@@ -1981,6 +2592,10 @@ $c_Lcross_imp$DisplayObjectOps$.prototype.springTo$extension__Lcross_pixi_Displa
   var code = new $c_Lcross_imp$DisplayObjectOps$$anonfun$$nestedInanonfun$springTo$1$1().init___Lcross_spring$SpritePositionSpring__Lcross_vec$Vec2d(s, target);
   $f_Lcross_data$Data__$$div$greater__s_PartialFunction__Lcross_data$Data(this$6, code);
   $m_Lcross_spring$().add__Lcross_spring$Updater__Lcross_spring$Updater(s);
+  return $$this
+});
+$c_Lcross_imp$DisplayObjectOps$.prototype.visibleTo$extension__Lcross_pixi_DisplayObject__Z__Lcross_pixi_DisplayObject = (function($$this, visible) {
+  $$this.visible = visible;
   return $$this
 });
 var $d_Lcross_imp$DisplayObjectOps$ = new $TypeData().initClass({
@@ -2105,10 +2720,124 @@ $c_Lcross_mvc$Controller.prototype.start__s_concurrent_Future = (function() {
     })
   })(this)), $m_Lcross_mvc$().ec$1)
 });
+$c_Lcross_mvc$Controller.prototype.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset = (function(level, rotation, random$1) {
+  var jsx$1 = $m_Lcross_random$RandomOps$();
+  var this$2 = $m_Lcross_asset_tree$().branches$1;
+  $m_sci_List$();
+  var b = new $c_scm_ListBuffer().init___();
+  var these = this$2;
+  while ((!these.isEmpty__Z())) {
+    var arg1 = these.head__O();
+    var b$1 = $as_Lcross_mvc$TreeAsset(arg1);
+    if ((((b$1.level$1 === level) && (b$1.rotation$1 === rotation)) !== false)) {
+      b.$$plus$eq__O__scm_ListBuffer(arg1)
+    };
+    var this$4 = these;
+    these = this$4.tail__sci_List()
+  };
+  return $as_Lcross_mvc$TreeAsset(jsx$1.oneOf$extension__s_util_Random__sci_List__O(random$1, b.toList__sci_List()))
+});
+$c_Lcross_mvc$Controller.prototype.randomTree__p1__Lcross_mvc$TreeNode = (function() {
+  var random = new $c_s_util_Random().init___();
+  var jsx$10 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(0, 0, random);
+  $m_sci_List$();
+  var jsx$9 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(1, (-1), random);
+  $m_sci_List$();
+  var jsx$8 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(2, (-2), random);
+  $m_sci_List$();
+  var array = [new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, (-3), random), $m_sci_Nil$()), new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, (-1), random), $m_sci_Nil$())];
+  var i = (((-1) + $uI(array.length)) | 0);
+  var result = $m_sci_Nil$();
+  while ((i >= 0)) {
+    var this$6 = result;
+    var index = i;
+    var x = array[index];
+    result = new $c_sci_$colon$colon().init___O__sci_List(x, this$6);
+    i = (((-1) + i) | 0)
+  };
+  var jsx$7 = new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$8, result);
+  var jsx$6 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(2, 0, random);
+  $m_sci_List$();
+  var array$1 = [new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, (-1), random), $m_sci_Nil$()), new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, 1, random), $m_sci_Nil$())];
+  var i$1 = (((-1) + $uI(array$1.length)) | 0);
+  var result$1 = $m_sci_Nil$();
+  while ((i$1 >= 0)) {
+    var this$12 = result$1;
+    var index$1 = i$1;
+    var x$1 = array$1[index$1];
+    result$1 = new $c_sci_$colon$colon().init___O__sci_List(x$1, this$12);
+    i$1 = (((-1) + i$1) | 0)
+  };
+  var array$2 = [jsx$7, new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$6, result$1)];
+  var i$2 = (((-1) + $uI(array$2.length)) | 0);
+  var result$2 = $m_sci_Nil$();
+  while ((i$2 >= 0)) {
+    var this$16 = result$2;
+    var index$2 = i$2;
+    var x$2 = array$2[index$2];
+    result$2 = new $c_sci_$colon$colon().init___O__sci_List(x$2, this$16);
+    i$2 = (((-1) + i$2) | 0)
+  };
+  var jsx$5 = new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$9, result$2);
+  var jsx$4 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(1, 1, random);
+  $m_sci_List$();
+  var jsx$3 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(2, 0, random);
+  $m_sci_List$();
+  var array$3 = [new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, (-1), random), $m_sci_Nil$()), new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, 1, random), $m_sci_Nil$())];
+  var i$3 = (((-1) + $uI(array$3.length)) | 0);
+  var result$3 = $m_sci_Nil$();
+  while ((i$3 >= 0)) {
+    var this$22 = result$3;
+    var index$3 = i$3;
+    var x$3 = array$3[index$3];
+    result$3 = new $c_sci_$colon$colon().init___O__sci_List(x$3, this$22);
+    i$3 = (((-1) + i$3) | 0)
+  };
+  var jsx$2 = new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$3, result$3);
+  var jsx$1 = this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(2, 2, random);
+  $m_sci_List$();
+  var array$4 = [new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, 1, random), $m_sci_Nil$()), new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(this.randomBranch$1__p1__I__I__s_util_Random__Lcross_mvc$TreeAsset(3, 3, random), $m_sci_Nil$())];
+  var i$4 = (((-1) + $uI(array$4.length)) | 0);
+  var result$4 = $m_sci_Nil$();
+  while ((i$4 >= 0)) {
+    var this$28 = result$4;
+    var index$4 = i$4;
+    var x$4 = array$4[index$4];
+    result$4 = new $c_sci_$colon$colon().init___O__sci_List(x$4, this$28);
+    i$4 = (((-1) + i$4) | 0)
+  };
+  var array$5 = [jsx$2, new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$1, result$4)];
+  var i$5 = (((-1) + $uI(array$5.length)) | 0);
+  var result$5 = $m_sci_Nil$();
+  while ((i$5 >= 0)) {
+    var this$32 = result$5;
+    var index$5 = i$5;
+    var x$5 = array$5[index$5];
+    result$5 = new $c_sci_$colon$colon().init___O__sci_List(x$5, this$32);
+    i$5 = (((-1) + i$5) | 0)
+  };
+  var array$6 = [jsx$5, new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$4, result$5)];
+  var i$6 = (((-1) + $uI(array$6.length)) | 0);
+  var result$6 = $m_sci_Nil$();
+  while ((i$6 >= 0)) {
+    var this$36 = result$6;
+    var index$6 = i$6;
+    var x$6 = array$6[index$6];
+    result$6 = new $c_sci_$colon$colon().init___O__sci_List(x$6, this$36);
+    i$6 = (((-1) + i$6) | 0)
+  };
+  return new $c_Lcross_mvc$TreeNode().init___Lcross_mvc$TreeAsset__sci_List(jsx$10, result$6)
+});
+$c_Lcross_mvc$Controller.prototype.respawnTree__V = (function() {
+  this.model$1.tree$1.write__O__O(new $c_s_Some().init___O(this.randomTree__p1__Lcross_mvc$TreeNode()))
+});
 $c_Lcross_mvc$Controller.prototype.init___Lcross_mvc$Model = (function(model) {
   this.model$1 = model;
   this.timer$1 = new $c_Lcross_timer$Timer().init___();
   return this
+});
+$c_Lcross_mvc$Controller.prototype.jumpToGame__V = (function() {
+  this.model$1.stage$1.write__O__O($m_Lcross_mvc$Stages$().Game$2)
 });
 var $d_Lcross_mvc$Controller = new $TypeData().initClass({
   Lcross_mvc$Controller: 0
@@ -2130,7 +2859,7 @@ function $h_Lcross_palette$() {
 }
 $h_Lcross_palette$.prototype = $c_Lcross_palette$.prototype;
 $c_Lcross_palette$.prototype.init___ = (function() {
-  this.Background$1 = 4145012;
+  this.Background$1 = 1778759;
   return this
 });
 var $d_Lcross_palette$ = new $TypeData().initClass({
@@ -2186,6 +2915,43 @@ function $m_Lcross_pixi_EventType$() {
     $n_Lcross_pixi_EventType$ = new $c_Lcross_pixi_EventType$().init___()
   };
   return $n_Lcross_pixi_EventType$
+}
+/** @constructor */
+function $c_Lcross_random$RandomOps$() {
+  $c_O.call(this)
+}
+$c_Lcross_random$RandomOps$.prototype = new $h_O();
+$c_Lcross_random$RandomOps$.prototype.constructor = $c_Lcross_random$RandomOps$;
+/** @constructor */
+function $h_Lcross_random$RandomOps$() {
+  /*<skip>*/
+}
+$h_Lcross_random$RandomOps$.prototype = $c_Lcross_random$RandomOps$.prototype;
+$c_Lcross_random$RandomOps$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcross_random$RandomOps$.prototype.oneOf$extension__s_util_Random__sci_List__O = (function($$this, list) {
+  var n = $f_sc_LinearSeqOptimized__length__I(list);
+  var n$1 = $$this.self$1.nextInt__I__I(n);
+  return $f_sc_LinearSeqOptimized__apply__I__O(list, n$1)
+});
+$c_Lcross_random$RandomOps$.prototype.between$extension__s_util_Random__I__I__I = (function($$this, start, end) {
+  var n = ((1 + ((end - start) | 0)) | 0);
+  return (($$this.self$1.nextInt__I__I(n) + start) | 0)
+});
+var $d_Lcross_random$RandomOps$ = new $TypeData().initClass({
+  Lcross_random$RandomOps$: 0
+}, false, "cross.random$RandomOps$", {
+  Lcross_random$RandomOps$: 1,
+  O: 1
+});
+$c_Lcross_random$RandomOps$.prototype.$classData = $d_Lcross_random$RandomOps$;
+var $n_Lcross_random$RandomOps$ = (void 0);
+function $m_Lcross_random$RandomOps$() {
+  if ((!$n_Lcross_random$RandomOps$)) {
+    $n_Lcross_random$RandomOps$ = new $c_Lcross_random$RandomOps$().init___()
+  };
+  return $n_Lcross_random$RandomOps$
 }
 /** @constructor */
 function $c_Lcross_timer$Timer() {
@@ -6644,6 +7410,220 @@ function $m_Lcross_imp$() {
   return $n_Lcross_imp$
 }
 /** @constructor */
+function $c_Lcross_stage_GameStage$Flower() {
+  $c_O.call(this);
+  this.pixiContainer$1 = null;
+  this.pixiSprite$1 = null;
+  this.cross$stage$GameStage$Flower$$assets$f = null;
+  this.controller$1 = null;
+  this.cross$stage$GameStage$Flower$$app$f = null;
+  this.opened$1 = false;
+  this.bitmap$0$1 = 0
+}
+$c_Lcross_stage_GameStage$Flower.prototype = new $h_O();
+$c_Lcross_stage_GameStage$Flower.prototype.constructor = $c_Lcross_stage_GameStage$Flower;
+/** @constructor */
+function $h_Lcross_stage_GameStage$Flower() {
+  /*<skip>*/
+}
+$h_Lcross_stage_GameStage$Flower.prototype = $c_Lcross_stage_GameStage$Flower.prototype;
+$c_Lcross_stage_GameStage$Flower.prototype.pixiContainer$lzycompute__p1__Lcross_pixi_Container = (function() {
+  if (((((1 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    this.pixiContainer$1 = new $g.PIXI.Container();
+    this.bitmap$0$1 = (((1 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiContainer$1
+});
+$c_Lcross_stage_GameStage$Flower.prototype.pixiSprite__Lcross_pixi_Sprite = (function() {
+  return (((((2 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiSprite$lzycompute__p1__Lcross_pixi_Sprite() : this.pixiSprite$1)
+});
+$c_Lcross_stage_GameStage$Flower.prototype.open__I__V = (function(delay) {
+  if ((!this.opened$1)) {
+    var this$1 = this.controller$1.model$1.tick$1;
+    var t = $uJ(this$1.value$1);
+    var lo = t.lo$2;
+    var hi$1 = t.hi$2;
+    var hi = (delay >> 31);
+    var lo$1 = ((lo + delay) | 0);
+    var hi$2 = ((((-2147483648) ^ lo$1) < ((-2147483648) ^ lo)) ? ((1 + ((hi$1 + hi) | 0)) | 0) : ((hi$1 + hi) | 0));
+    var this$3 = this.controller$1.model$1.tick$1;
+    var code = new $c_Lcross_stage_GameStage$Flower$$anonfun$open$1().init___Lcross_stage_GameStage$Flower__J(this, new $c_sjsr_RuntimeLong().init___I__I(lo$1, hi$2));
+    $f_Lcross_data$Data__$$div$greater__s_PartialFunction__Lcross_data$Data(this$3, code)
+  }
+});
+$c_Lcross_stage_GameStage$Flower.prototype.init___sci_List__Lcross_mvc$Controller__Lcross_pixi_Application = (function(assets, controller, app) {
+  this.cross$stage$GameStage$Flower$$assets$f = assets;
+  this.controller$1 = controller;
+  this.cross$stage$GameStage$Flower$$app$f = app;
+  this.opened$1 = false;
+  return this
+});
+$c_Lcross_stage_GameStage$Flower.prototype.pixiContainer__Lcross_pixi_Container = (function() {
+  return (((((1 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiContainer$lzycompute__p1__Lcross_pixi_Container() : this.pixiContainer$1)
+});
+$c_Lcross_stage_GameStage$Flower.prototype.toPixi__Lcross_pixi_DisplayObject = (function() {
+  return this.pixiContainer__Lcross_pixi_Container()
+});
+$c_Lcross_stage_GameStage$Flower.prototype.pixiSprite$lzycompute__p1__Lcross_pixi_Sprite = (function() {
+  if (((((2 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var jsx$4 = $m_Lcross_imp$DisplayObjectOps$();
+    $m_Lcross_imp$();
+    var jsx$3 = $m_Lcross_imp$DisplayObjectOps$();
+    $m_Lcross_imp$();
+    var jsx$2 = $m_Lcross_imp$DisplayObjectOps$();
+    $m_Lcross_imp$();
+    var jsx$1 = $m_Lcross_imp$AssetOps$();
+    $m_Lcross_imp$();
+    var a = $as_Lcross_mvc$Asset(this.cross$stage$GameStage$Flower$$assets$f.head__O());
+    var a$1 = jsx$1.sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(a, this.cross$stage$GameStage$Flower$$app$f);
+    var a$2 = jsx$2.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$1, this.pixiContainer__Lcross_pixi_Container());
+    var a$3 = jsx$3.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$2, new $c_Lcross_vec$Vec2d().init___D__D((-4), (-4.0)));
+    this.pixiSprite$1 = jsx$4.visibleTo$extension__Lcross_pixi_DisplayObject__Z__Lcross_pixi_DisplayObject(a$3, false);
+    this.bitmap$0$1 = (((2 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiSprite$1
+});
+function $is_Lcross_stage_GameStage$Flower(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcross_stage_GameStage$Flower)))
+}
+function $as_Lcross_stage_GameStage$Flower(obj) {
+  return (($is_Lcross_stage_GameStage$Flower(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "cross.stage.GameStage$Flower"))
+}
+function $isArrayOf_Lcross_stage_GameStage$Flower(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcross_stage_GameStage$Flower)))
+}
+function $asArrayOf_Lcross_stage_GameStage$Flower(obj, depth) {
+  return (($isArrayOf_Lcross_stage_GameStage$Flower(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcross.stage.GameStage$Flower;", depth))
+}
+var $d_Lcross_stage_GameStage$Flower = new $TypeData().initClass({
+  Lcross_stage_GameStage$Flower: 0
+}, false, "cross.stage.GameStage$Flower", {
+  Lcross_stage_GameStage$Flower: 1,
+  O: 1,
+  Lcross_component_Component: 1
+});
+$c_Lcross_stage_GameStage$Flower.prototype.$classData = $d_Lcross_stage_GameStage$Flower;
+/** @constructor */
+function $c_Lcross_stage_GameStage$FlowerCluster() {
+  $c_O.call(this);
+  this.pixiContainer$1 = null;
+  this.pixiFlowers$1 = null;
+  this.controller$1 = null;
+  this.app$1 = null;
+  this.opened$1 = false;
+  this.random$1 = null;
+  this.bitmap$0$1 = 0
+}
+$c_Lcross_stage_GameStage$FlowerCluster.prototype = new $h_O();
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.constructor = $c_Lcross_stage_GameStage$FlowerCluster;
+/** @constructor */
+function $h_Lcross_stage_GameStage$FlowerCluster() {
+  /*<skip>*/
+}
+$h_Lcross_stage_GameStage$FlowerCluster.prototype = $c_Lcross_stage_GameStage$FlowerCluster.prototype;
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.pixiContainer$lzycompute__p1__Lcross_pixi_Container = (function() {
+  if (((((1 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    this.pixiContainer$1 = new $g.PIXI.Container();
+    this.bitmap$0$1 = (((1 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiContainer$1
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.open__V = (function() {
+  if ((!this.opened$1)) {
+    this.pixiFlowers__sci_IndexedSeq().foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+      return (function(flower$2) {
+        var flower = $as_Lcross_stage_GameStage$Flower(flower$2);
+        var jsx$1 = $m_Lcross_random$RandomOps$();
+        var random = $this.random$1;
+        flower.open__I__V(jsx$1.between$extension__s_util_Random__I__I__I(random, 0, $m_Lcross_config$().FlowerAnimationDelay$1))
+      })
+    })(this)));
+    this.opened$1 = true
+  }
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.pixiFlowers__sci_IndexedSeq = (function() {
+  return (((((2 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiFlowers$lzycompute__p1__sci_IndexedSeq() : this.pixiFlowers$1)
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.pixiContainer__Lcross_pixi_Container = (function() {
+  return (((((1 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiContainer$lzycompute__p1__Lcross_pixi_Container() : this.pixiContainer$1)
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.toPixi__Lcross_pixi_DisplayObject = (function() {
+  return this.pixiContainer__Lcross_pixi_Container()
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.init___J__Lcross_mvc$Controller__Lcross_pixi_Application = (function(seed, controller, app) {
+  this.controller$1 = controller;
+  this.app$1 = app;
+  this.opened$1 = false;
+  this.random$1 = new $c_s_util_Random().init___J(seed);
+  return this
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.pixiFlowers$lzycompute__p1__sci_IndexedSeq = (function() {
+  if (((((2 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var jsx$1 = $m_Lcross_random$RandomOps$();
+    var random = this.random$1;
+    var end = jsx$1.between$extension__s_util_Random__I__I__I(random, $m_Lcross_config$().FlowerClusterMinCount$1, $m_Lcross_config$().FlowerClusterMaxCount$1);
+    var isEmpty$4 = (end <= 0);
+    if (isEmpty$4) {
+      var scala$collection$immutable$Range$$numRangeElements$4 = 0
+    } else {
+      var hi = (end >> 31);
+      var scala$collection$immutable$Range$$numRangeElements$4 = (((hi === 0) ? (((-2147483648) ^ end) > (-1)) : (hi > 0)) ? (-1) : end)
+    };
+    var scala$collection$immutable$Range$$lastElement$4 = (((-1) + end) | 0);
+    $m_sci_IndexedSeq$();
+    $m_sc_IndexedSeq$();
+    $m_sci_IndexedSeq$();
+    $m_sci_Vector$();
+    var b = new $c_sci_VectorBuilder().init___();
+    if ((scala$collection$immutable$Range$$numRangeElements$4 < 0)) {
+      $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, end, 1, false)
+    };
+    switch (scala$collection$immutable$Range$$numRangeElements$4) {
+      case (-1): {
+        break
+      }
+    };
+    if ((!isEmpty$4)) {
+      var i = 0;
+      while (true) {
+        var arg1 = i;
+        var jsx$2 = $m_Lcross_random$RandomOps$();
+        var random$1 = this.random$1;
+        var this$9 = new $c_Lcross_stage_GameStage$Flower().init___sci_List__Lcross_mvc$Controller__Lcross_pixi_Application($as_sci_List(jsx$2.oneOf$extension__s_util_Random__sci_List__O(random$1, $m_Lcross_asset_flower$().flowers$1)), this.controller$1, this.app$1);
+        var arg1$1 = this$9.pixiContainer__Lcross_pixi_Container();
+        var this$10 = this.random$1;
+        var angle = (2 * (3.141592653589793 * this$10.self$1.nextDouble__D()));
+        var this$11 = this.random$1;
+        var distance = (this$11.self$1.nextDouble__D() * $m_Lcross_config$().FlowerClusterSpread$1);
+        var x = ($uD($g.Math.cos(angle)) * distance);
+        var y = ($uD($g.Math.sin(angle)) * distance);
+        var jsx$3 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var a = $m_Lcross_imp$DisplayObjectOps$().addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(($m_Lcross_imp$(), arg1$1), this.pixiContainer__Lcross_pixi_Container());
+        var $int = $doubleToInt(x);
+        var y$1 = $doubleToInt(y);
+        jsx$3.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a, new $c_Lcross_vec$Vec2d().init___D__D($int, y$1));
+        b.$$plus$eq__O__sci_VectorBuilder(this$9);
+        if ((i === scala$collection$immutable$Range$$lastElement$4)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    };
+    this.pixiFlowers$1 = b.result__sci_Vector();
+    this.bitmap$0$1 = (((2 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiFlowers$1
+});
+var $d_Lcross_stage_GameStage$FlowerCluster = new $TypeData().initClass({
+  Lcross_stage_GameStage$FlowerCluster: 0
+}, false, "cross.stage.GameStage$FlowerCluster", {
+  Lcross_stage_GameStage$FlowerCluster: 1,
+  O: 1,
+  Lcross_component_Component: 1
+});
+$c_Lcross_stage_GameStage$FlowerCluster.prototype.$classData = $d_Lcross_stage_GameStage$FlowerCluster;
+/** @constructor */
 function $c_jl_Number() {
   $c_O.call(this)
 }
@@ -6972,6 +7952,20 @@ $c_ju_Random.prototype.init___J = (function(seed_in) {
   this.setSeed__J__V(seed_in);
   return this
 });
+$c_ju_Random.prototype.nextLong__J = (function() {
+  var value = this.next__I__I(32);
+  var value$1 = this.next__I__I(32);
+  var hi$1 = (value$1 >> 31);
+  var hi$2 = ((value + hi$1) | 0);
+  return new $c_sjsr_RuntimeLong().init___I__I(value$1, hi$2)
+});
+$c_ju_Random.prototype.nextInt__I__I = (function(n) {
+  if ((n <= 0)) {
+    throw new $c_jl_IllegalArgumentException().init___T("n must be positive")
+  } else {
+    return (((n & ((-n) | 0)) === n) ? (this.next__I__I(31) >> $clz32(n)) : this.loop$1__p1__I__I(n))
+  }
+});
 $c_ju_Random.prototype.next__I__I = (function(bits) {
   var oldSeedHi = this.seedHi$1;
   var oldSeedLo = this.seedLo$1;
@@ -6984,6 +7978,20 @@ $c_ju_Random.prototype.next__I__I = (function(bits) {
   this.seedLo$1 = newSeedLo;
   var result32 = ((newSeedHi << 8) | (newSeedLo >> 16));
   return ((result32 >>> ((32 - bits) | 0)) | 0)
+});
+$c_ju_Random.prototype.loop$1__p1__I__I = (function(n$1) {
+  _loop: while (true) {
+    var bits = this.next__I__I(31);
+    var value = ((bits % n$1) | 0);
+    if ((((((bits - value) | 0) + (((-1) + n$1) | 0)) | 0) < 0)) {
+      continue _loop
+    } else {
+      return value
+    }
+  }
+});
+$c_ju_Random.prototype.nextDouble__D = (function() {
+  return (((1.34217728E8 * this.next__I__I(26)) + this.next__I__I(27)) / 9.007199254740992E15)
 });
 $c_ju_Random.prototype.setSeed__J__V = (function(seed_in) {
   var lo = ((-554899859) ^ seed_in.lo$2);
@@ -7649,16 +8657,16 @@ $c_sr_AbstractFunction2.prototype.toString__T = (function() {
   return "<function2>"
 });
 /** @constructor */
-function $c_sr_AbstractFunction5() {
+function $c_sr_AbstractFunction6() {
   $c_O.call(this)
 }
-$c_sr_AbstractFunction5.prototype = new $h_O();
-$c_sr_AbstractFunction5.prototype.constructor = $c_sr_AbstractFunction5;
+$c_sr_AbstractFunction6.prototype = new $h_O();
+$c_sr_AbstractFunction6.prototype.constructor = $c_sr_AbstractFunction6;
 /** @constructor */
-function $h_sr_AbstractFunction5() {
+function $h_sr_AbstractFunction6() {
   /*<skip>*/
 }
-$h_sr_AbstractFunction5.prototype = $c_sr_AbstractFunction5.prototype;
+$h_sr_AbstractFunction6.prototype = $c_sr_AbstractFunction6.prototype;
 /** @constructor */
 function $c_sr_BooleanRef() {
   $c_O.call(this);
@@ -7790,6 +8798,82 @@ var $d_Lcross_app$delayedInit$body = new $TypeData().initClass({
   F0: 1
 });
 $c_Lcross_app$delayedInit$body.prototype.$classData = $d_Lcross_app$delayedInit$body;
+/** @constructor */
+function $c_Lcross_component_Button() {
+  $c_O.call(this);
+  this.pixiContainer$1 = null;
+  this.pixiBackground$1 = null;
+  this.textureNormal$1 = null;
+  this.textureHover$1 = null;
+  this.texturePressed$1 = null;
+  this.textureDisabled$1 = null;
+  this.enabled$1 = false;
+  this.hovering$1 = false;
+  this.dragging$1 = false;
+  this.clickHandler$1 = null;
+  this.hoverHandler$1 = null
+}
+$c_Lcross_component_Button.prototype = new $h_O();
+$c_Lcross_component_Button.prototype.constructor = $c_Lcross_component_Button;
+/** @constructor */
+function $h_Lcross_component_Button() {
+  /*<skip>*/
+}
+$h_Lcross_component_Button.prototype = $c_Lcross_component_Button.prototype;
+$c_Lcross_component_Button.prototype.updateVisual__V = (function() {
+  if (this.enabled$1) {
+    if ((!(!(this.hovering$1 & this.dragging$1)))) {
+      this.pixiBackground$1.texture = this.texturePressed$1
+    } else if (this.hovering$1) {
+      this.pixiBackground$1.texture = this.textureHover$1
+    } else {
+      this.pixiBackground$1.texture = this.textureNormal$1
+    }
+  } else {
+    this.pixiBackground$1.texture = this.textureDisabled$1
+  }
+});
+$c_Lcross_component_Button.prototype.init___Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_pixi_Application = (function(assetNormal, assetHover, assetPressed, assetDisabled, app) {
+  $f_Lcross_component_Interactive__$$init$__V(this);
+  this.pixiContainer$1 = new $g.PIXI.Container();
+  var jsx$2 = $m_Lcross_imp$DisplayObjectOps$();
+  $m_Lcross_imp$();
+  var jsx$1 = $m_Lcross_imp$DisplayObjectOps$();
+  $m_Lcross_imp$();
+  var a = $m_Lcross_imp$AssetOps$().sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(($m_Lcross_imp$(), assetNormal), app);
+  var a$1 = jsx$1.anchorAtCenter$extension__Lcross_pixi_DisplayObject__Lcross_pixi_DisplayObject(a);
+  this.pixiBackground$1 = jsx$2.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$1, this.pixiContainer$1);
+  this.textureNormal$1 = $m_Lcross_imp$AssetOps$().texture$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_BaseTexture(($m_Lcross_imp$(), assetNormal), app);
+  this.textureHover$1 = $m_Lcross_imp$AssetOps$().texture$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_BaseTexture(($m_Lcross_imp$(), assetHover), app);
+  this.texturePressed$1 = $m_Lcross_imp$AssetOps$().texture$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_BaseTexture(($m_Lcross_imp$(), assetPressed), app);
+  this.textureDisabled$1 = $m_Lcross_imp$AssetOps$().texture$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_BaseTexture(($m_Lcross_imp$(), assetDisabled), app);
+  $f_Lcross_component_Interactive__initInteractions__V(this);
+  return this
+});
+$c_Lcross_component_Button.prototype.toPixi__Lcross_pixi_DisplayObject = (function() {
+  return this.pixiContainer$1
+});
+function $is_Lcross_component_Button(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcross_component_Button)))
+}
+function $as_Lcross_component_Button(obj) {
+  return (($is_Lcross_component_Button(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "cross.component.Button"))
+}
+function $isArrayOf_Lcross_component_Button(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcross_component_Button)))
+}
+function $asArrayOf_Lcross_component_Button(obj, depth) {
+  return (($isArrayOf_Lcross_component_Button(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcross.component.Button;", depth))
+}
+var $d_Lcross_component_Button = new $TypeData().initClass({
+  Lcross_component_Button: 0
+}, false, "cross.component.Button", {
+  Lcross_component_Button: 1,
+  O: 1,
+  Lcross_component_Component: 1,
+  Lcross_component_Interactive: 1
+});
+$c_Lcross_component_Button.prototype.$classData = $d_Lcross_component_Button;
 /** @constructor */
 function $c_Lcross_logging$BrowserLogApi$() {
   $c_O.call(this);
@@ -10032,6 +11116,39 @@ function $m_s_util_Left$() {
   return $n_s_util_Left$
 }
 /** @constructor */
+function $c_s_util_Random() {
+  $c_O.call(this);
+  this.self$1 = null
+}
+$c_s_util_Random.prototype = new $h_O();
+$c_s_util_Random.prototype.constructor = $c_s_util_Random;
+/** @constructor */
+function $h_s_util_Random() {
+  /*<skip>*/
+}
+$h_s_util_Random.prototype = $c_s_util_Random.prototype;
+$c_s_util_Random.prototype.init___ = (function() {
+  $c_s_util_Random.prototype.init___ju_Random.call(this, new $c_ju_Random().init___());
+  return this
+});
+$c_s_util_Random.prototype.init___J = (function(seed) {
+  $c_s_util_Random.prototype.init___ju_Random.call(this, new $c_ju_Random().init___J(seed));
+  return this
+});
+$c_s_util_Random.prototype.init___ju_Random = (function(self) {
+  this.self$1 = self;
+  return this
+});
+var $d_s_util_Random = new $TypeData().initClass({
+  s_util_Random: 0
+}, false, "scala.util.Random", {
+  s_util_Random: 1,
+  O: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_util_Random.prototype.$classData = $d_s_util_Random;
+/** @constructor */
 function $c_s_util_Right$() {
   $c_O.call(this)
 }
@@ -10763,11 +11880,14 @@ $c_Lcross_app$.prototype.main__AT__V = (function(args) {
 });
 $c_Lcross_app$.prototype.delayedEndpoint$cross$app$1__V = (function() {
   $g.PIXI.settings.SCALE_MODE = $uD($g.PIXI.SCALE_MODES.NEAREST);
-  var jsx$3 = new $c_Lcross_data$Implementation().init___O($m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong());
-  var jsx$2 = $m_Lcross_mvc$Model$().apply$default$2__Lcross_data$Writable();
-  var jsx$1 = new $c_Lcross_data$Implementation().init___O(1.0);
+  var jsx$5 = new $c_Lcross_data$Implementation().init___O($m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong());
+  var jsx$4 = $m_Lcross_mvc$Model$().apply$default$2__Lcross_data$Writable();
+  var jsx$3 = new $c_Lcross_data$Implementation().init___O(1.0);
   var $default = $m_Lcross_mvc$Stages$().Loading$2;
-  this.model$1 = new $c_Lcross_mvc$Model().init___Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable(jsx$3, jsx$2, jsx$1, new $c_Lcross_data$Implementation().init___O($default), new $c_Lcross_data$Implementation().init___O(false));
+  var jsx$2 = new $c_Lcross_data$Implementation().init___O($default);
+  var jsx$1 = new $c_Lcross_data$Implementation().init___O(false);
+  var $default$1 = $m_s_None$();
+  this.model$1 = new $c_Lcross_mvc$Model().init___Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable(jsx$5, jsx$4, jsx$3, jsx$2, jsx$1, new $c_Lcross_data$Implementation().init___O($default$1));
   this.controller$1 = new $c_Lcross_mvc$Controller().init___Lcross_mvc$Model(this.model$1);
   $m_Lcross_ui$().load__Lcross_mvc$Controller__s_concurrent_Future(this.controller$1).flatMap__F1__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(ui$2) {
@@ -12291,7 +13411,8 @@ function $c_Lcross_mvc$Model() {
   this.screen$1 = null;
   this.scale$1 = null;
   this.stage$1 = null;
-  this.loaded$1 = null
+  this.loaded$1 = null;
+  this.tree$1 = null
 }
 $c_Lcross_mvc$Model.prototype = new $h_O();
 $c_Lcross_mvc$Model.prototype.constructor = $c_Lcross_mvc$Model;
@@ -12303,16 +13424,8 @@ $h_Lcross_mvc$Model.prototype = $c_Lcross_mvc$Model.prototype;
 $c_Lcross_mvc$Model.prototype.productPrefix__T = (function() {
   return "Model"
 });
-$c_Lcross_mvc$Model.prototype.init___Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable = (function(tick, screen, scale, stage, loaded) {
-  this.tick$1 = tick;
-  this.screen$1 = screen;
-  this.scale$1 = scale;
-  this.stage$1 = stage;
-  this.loaded$1 = loaded;
-  return this
-});
 $c_Lcross_mvc$Model.prototype.productArity__I = (function() {
-  return 5
+  return 6
 });
 $c_Lcross_mvc$Model.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
@@ -12324,28 +13437,35 @@ $c_Lcross_mvc$Model.prototype.equals__O__Z = (function(x$1) {
     if ((x === x$2)) {
       var x$3 = this.screen$1;
       var x$4 = Model$1.screen$1;
-      var jsx$3 = (x$3 === x$4)
+      var jsx$4 = (x$3 === x$4)
+    } else {
+      var jsx$4 = false
+    };
+    if (jsx$4) {
+      var x$5 = this.scale$1;
+      var x$6 = Model$1.scale$1;
+      var jsx$3 = (x$5 === x$6)
     } else {
       var jsx$3 = false
     };
     if (jsx$3) {
-      var x$5 = this.scale$1;
-      var x$6 = Model$1.scale$1;
-      var jsx$2 = (x$5 === x$6)
+      var x$7 = this.stage$1;
+      var x$8 = Model$1.stage$1;
+      var jsx$2 = (x$7 === x$8)
     } else {
       var jsx$2 = false
     };
     if (jsx$2) {
-      var x$7 = this.stage$1;
-      var x$8 = Model$1.stage$1;
-      var jsx$1 = (x$7 === x$8)
+      var x$9 = this.loaded$1;
+      var x$10 = Model$1.loaded$1;
+      var jsx$1 = (x$9 === x$10)
     } else {
       var jsx$1 = false
     };
     if (jsx$1) {
-      var x$9 = this.loaded$1;
-      var x$10 = Model$1.loaded$1;
-      return (x$9 === x$10)
+      var x$11 = this.tree$1;
+      var x$12 = Model$1.tree$1;
+      return (x$11 === x$12)
     } else {
       return false
     }
@@ -12375,6 +13495,10 @@ $c_Lcross_mvc$Model.prototype.productElement__I__O = (function(x$1) {
       return this.loaded$1;
       break
     }
+    case 5: {
+      return this.tree$1;
+      break
+    }
     default: {
       throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
     }
@@ -12389,6 +13513,15 @@ $c_Lcross_mvc$Model.prototype.hashCode__I = (function() {
 });
 $c_Lcross_mvc$Model.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+$c_Lcross_mvc$Model.prototype.init___Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable__Lcross_data$Writable = (function(tick, screen, scale, stage, loaded, tree) {
+  this.tick$1 = tick;
+  this.screen$1 = screen;
+  this.scale$1 = scale;
+  this.stage$1 = stage;
+  this.loaded$1 = loaded;
+  this.tree$1 = tree;
+  return this
 });
 function $is_Lcross_mvc$Model(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcross_mvc$Model)))
@@ -12415,9 +13548,9 @@ var $d_Lcross_mvc$Model = new $TypeData().initClass({
 $c_Lcross_mvc$Model.prototype.$classData = $d_Lcross_mvc$Model;
 /** @constructor */
 function $c_Lcross_mvc$Model$() {
-  $c_sr_AbstractFunction5.call(this)
+  $c_sr_AbstractFunction6.call(this)
 }
-$c_Lcross_mvc$Model$.prototype = new $h_sr_AbstractFunction5();
+$c_Lcross_mvc$Model$.prototype = new $h_sr_AbstractFunction6();
 $c_Lcross_mvc$Model$.prototype.constructor = $c_Lcross_mvc$Model$;
 /** @constructor */
 function $h_Lcross_mvc$Model$() {
@@ -12438,9 +13571,9 @@ var $d_Lcross_mvc$Model$ = new $TypeData().initClass({
   Lcross_mvc$Model$: 0
 }, false, "cross.mvc$Model$", {
   Lcross_mvc$Model$: 1,
-  sr_AbstractFunction5: 1,
+  sr_AbstractFunction6: 1,
   O: 1,
-  F5: 1,
+  F6: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
@@ -12601,12 +13734,108 @@ var $d_Lcross_mvc$TreeAsset = new $TypeData().initClass({
 });
 $c_Lcross_mvc$TreeAsset.prototype.$classData = $d_Lcross_mvc$TreeAsset;
 /** @constructor */
+function $c_Lcross_mvc$TreeNode() {
+  $c_O.call(this);
+  this.asset$1 = null;
+  this.branches$1 = null
+}
+$c_Lcross_mvc$TreeNode.prototype = new $h_O();
+$c_Lcross_mvc$TreeNode.prototype.constructor = $c_Lcross_mvc$TreeNode;
+/** @constructor */
+function $h_Lcross_mvc$TreeNode() {
+  /*<skip>*/
+}
+$h_Lcross_mvc$TreeNode.prototype = $c_Lcross_mvc$TreeNode.prototype;
+$c_Lcross_mvc$TreeNode.prototype.productPrefix__T = (function() {
+  return "TreeNode"
+});
+$c_Lcross_mvc$TreeNode.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Lcross_mvc$TreeNode.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_Lcross_mvc$TreeNode(x$1)) {
+    var TreeNode$1 = $as_Lcross_mvc$TreeNode(x$1);
+    var x = this.asset$1;
+    var x$2 = TreeNode$1.asset$1;
+    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+      var x$3 = this.branches$1;
+      var x$4 = TreeNode$1.branches$1;
+      return ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+});
+$c_Lcross_mvc$TreeNode.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.asset$1;
+      break
+    }
+    case 1: {
+      return this.branches$1;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Lcross_mvc$TreeNode.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lcross_mvc$TreeNode.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
+});
+$c_Lcross_mvc$TreeNode.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+$c_Lcross_mvc$TreeNode.prototype.init___Lcross_mvc$TreeAsset__sci_List = (function(asset, branches) {
+  this.asset$1 = asset;
+  this.branches$1 = branches;
+  return this
+});
+function $is_Lcross_mvc$TreeNode(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcross_mvc$TreeNode)))
+}
+function $as_Lcross_mvc$TreeNode(obj) {
+  return (($is_Lcross_mvc$TreeNode(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "cross.mvc$TreeNode"))
+}
+function $isArrayOf_Lcross_mvc$TreeNode(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcross_mvc$TreeNode)))
+}
+function $asArrayOf_Lcross_mvc$TreeNode(obj, depth) {
+  return (($isArrayOf_Lcross_mvc$TreeNode(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcross.mvc$TreeNode;", depth))
+}
+var $d_Lcross_mvc$TreeNode = new $TypeData().initClass({
+  Lcross_mvc$TreeNode: 0
+}, false, "cross.mvc$TreeNode", {
+  Lcross_mvc$TreeNode: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lcross_mvc$TreeNode.prototype.$classData = $d_Lcross_mvc$TreeNode;
+/** @constructor */
 function $c_Lcross_stage_GameStage() {
   $c_O.call(this);
   this.pixiContainer$1 = null;
   this.pixiCenter$1 = null;
+  this.pixiSky$1 = null;
+  this.pixiSpawnTree$1 = null;
+  this.pixiTree$1 = null;
+  this.pixiFlowers$1 = null;
   this.create$1 = null;
-  this.controller$1 = null;
+  this.cross$stage$GameStage$$controller$f = null;
+  this.cross$stage$GameStage$$app$f = null;
+  this.treePosition$1 = null;
   this.toPixi$1 = null;
   this.ec$1 = null;
   this.log$1 = null;
@@ -12619,6 +13848,16 @@ function $h_Lcross_stage_GameStage() {
   /*<skip>*/
 }
 $h_Lcross_stage_GameStage.prototype = $c_Lcross_stage_GameStage.prototype;
+$c_Lcross_stage_GameStage.prototype.pixiSky$lzycompute__p1__Lcross_pixi_Container = (function() {
+  if (((((4 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var jsx$1 = $m_Lcross_imp$ContainerOps$();
+    $m_Lcross_imp$();
+    var a = this.pixiCenter__Lcross_pixi_Container();
+    this.pixiSky$1 = jsx$1.sub$extension__Lcross_pixi_Container__Lcross_pixi_Container(a);
+    this.bitmap$0$1 = (((4 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiSky$1
+});
 $c_Lcross_stage_GameStage.prototype.pixiCenter__Lcross_pixi_Container = (function() {
   return (((((2 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiCenter$lzycompute__p1__Lcross_pixi_Container() : this.pixiCenter$1)
 });
@@ -12634,32 +13873,77 @@ $c_Lcross_stage_GameStage.prototype.pixiContainer$lzycompute__p1__Lcross_pixi_Co
   };
   return this.pixiContainer$1
 });
+$c_Lcross_stage_GameStage.prototype.pixiTree$lzycompute__p1__Lcross_pixi_Container = (function() {
+  if (((((16 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var jsx$1 = $m_Lcross_imp$ContainerOps$();
+    $m_Lcross_imp$();
+    var a = this.pixiCenter__Lcross_pixi_Container();
+    this.pixiTree$1 = jsx$1.sub$extension__Lcross_pixi_Container__Lcross_pixi_Container(a);
+    this.bitmap$0$1 = (((16 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiTree$1
+});
 $c_Lcross_stage_GameStage.prototype.pixiCenter$lzycompute__p1__Lcross_pixi_Container = (function() {
   if (((((2 & this.bitmap$0$1) << 24) >> 24) === 0)) {
-    this.pixiCenter$1 = $m_Lcross_imp$().centerStage__Lcross_mvc$Controller__Lcross_pixi_Container(this.controller$1);
+    this.pixiCenter$1 = $m_Lcross_imp$().centerStage__Lcross_mvc$Controller__Lcross_pixi_Container(this.cross$stage$GameStage$$controller$f);
     this.bitmap$0$1 = (((2 | this.bitmap$0$1) << 24) >> 24)
   };
-  this.controller$1 = null;
   return this.pixiCenter$1
 });
 $c_Lcross_stage_GameStage.prototype.create__s_concurrent_Future = (function() {
-  return (((((4 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.create$lzycompute__p1__s_concurrent_Future() : this.create$1)
+  return (((((64 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.create$lzycompute__p1__s_concurrent_Future() : this.create$1)
 });
 $c_Lcross_stage_GameStage.prototype.pixiContainer__Lcross_pixi_Container = (function() {
   return (((((1 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiContainer$lzycompute__p1__Lcross_pixi_Container() : this.pixiContainer$1)
 });
+$c_Lcross_stage_GameStage.prototype.pixiSpawnTree__Lcross_component_Button = (function() {
+  return (((((8 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiSpawnTree$lzycompute__p1__Lcross_component_Button() : this.pixiSpawnTree$1)
+});
 $c_Lcross_stage_GameStage.prototype.toPixi__Lcross_pixi_DisplayObject = (function() {
   return this.toPixi$1
 });
+$c_Lcross_stage_GameStage.prototype.pixiFlowers__Lcross_pixi_Container = (function() {
+  return (((((32 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiFlowers$lzycompute__p1__Lcross_pixi_Container() : this.pixiFlowers$1)
+});
+$c_Lcross_stage_GameStage.prototype.pixiFlowers$lzycompute__p1__Lcross_pixi_Container = (function() {
+  if (((((32 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var jsx$1 = $m_Lcross_imp$ContainerOps$();
+    $m_Lcross_imp$();
+    var a = this.pixiCenter__Lcross_pixi_Container();
+    this.pixiFlowers$1 = jsx$1.sub$extension__Lcross_pixi_Container__Lcross_pixi_Container(a);
+    this.bitmap$0$1 = (((32 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiFlowers$1
+});
 $c_Lcross_stage_GameStage.prototype.init___Lcross_mvc$Controller__Lcross_pixi_Application = (function(controller, app) {
-  this.controller$1 = controller;
+  this.cross$stage$GameStage$$controller$f = controller;
+  this.cross$stage$GameStage$$app$f = app;
   this.log$1 = $m_Lcross_logging$BrowserLogApi$();
   this.ec$1 = $as_s_concurrent_ExecutionContextExecutor($m_s_concurrent_ExecutionContext$Implicits$().global__s_concurrent_ExecutionContext());
+  this.treePosition$1 = new $c_Lcross_vec$Vec2i().init___I__I(0, 95);
   this.toPixi$1 = this.pixiContainer__Lcross_pixi_Container();
   return this
 });
+$c_Lcross_stage_GameStage.prototype.pixiSky__Lcross_pixi_Container = (function() {
+  return (((((4 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiSky$lzycompute__p1__Lcross_pixi_Container() : this.pixiSky$1)
+});
+$c_Lcross_stage_GameStage.prototype.pixiSpawnTree$lzycompute__p1__Lcross_component_Button = (function() {
+  if (((((8 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var assetNormal = $m_Lcross_asset_ui$().asset$minustree$minusnormal$1;
+    var assetHover = $m_Lcross_asset_ui$().asset$minustree$minushover$1;
+    var assetPressed = $m_Lcross_asset_ui$().asset$minustree$minuspressed$1;
+    var assetDisabled = $m_Lcross_asset_ui$().asset$minustree$minusnormal$1;
+    var app = this.cross$stage$GameStage$$app$f;
+    this.pixiSpawnTree$1 = new $c_Lcross_component_Button().init___Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_pixi_Application(assetNormal, assetHover, assetPressed, assetDisabled, app);
+    this.bitmap$0$1 = (((8 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiSpawnTree$1
+});
+$c_Lcross_stage_GameStage.prototype.pixiTree__Lcross_pixi_Container = (function() {
+  return (((((16 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiTree$lzycompute__p1__Lcross_pixi_Container() : this.pixiTree$1)
+});
 $c_Lcross_stage_GameStage.prototype.create$lzycompute__p1__s_concurrent_Future = (function() {
-  if (((((4 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+  if (((((64 & this.bitmap$0$1) << 24) >> 24) === 0)) {
     this.create$1 = $m_s_concurrent_Future$().apply__F0__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
       return (function() {
         $this.log$1.info__T__V("[game stage] setting up...");
@@ -12667,10 +13951,55 @@ $c_Lcross_stage_GameStage.prototype.create$lzycompute__p1__s_concurrent_Future =
         $m_Lcross_imp$();
         var a = $this.pixiCenter__Lcross_pixi_Container();
         jsx$1.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a, $this.pixiContainer__Lcross_pixi_Container());
+        var jsx$2 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var a$1 = $this.pixiSky__Lcross_pixi_Container();
+        $m_Lcross_imp$();
+        var v = $this.treePosition$1;
+        jsx$2.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$1, new $c_Lcross_vec$Vec2d().init___D__D(v.x$1, v.y$1));
+        var jsx$5 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var jsx$4 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var jsx$3 = $m_Lcross_imp$AssetOps$();
+        $m_Lcross_imp$();
+        var a$2 = $m_Lcross_asset_ui$().asset$minussky$1;
+        var a$3 = jsx$3.sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(a$2, $this.cross$stage$GameStage$$app$f);
+        var a$4 = jsx$4.anchorAtCenter$extension__Lcross_pixi_DisplayObject__Lcross_pixi_DisplayObject(a$3);
+        jsx$5.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$4, $this.pixiSky__Lcross_pixi_Container());
+        var this$7 = $this.pixiSpawnTree__Lcross_component_Button();
+        var code = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$1) {
+          return (function(button$2) {
+            var button = $as_Lcross_component_Button(button$2);
+            $f_Lcross_component_Interactive__setEnabled__Z__Lcross_component_Interactive(button, false);
+            $this$1.cross$stage$GameStage$$controller$f.respawnTree__V()
+          })
+        })($this));
+        var this$8 = $as_Lcross_component_Component($f_Lcross_component_Interactive__onClick__F1__Lcross_component_Interactive(this$7, code));
+        var arg1 = this$8.toPixi__Lcross_pixi_DisplayObject();
+        var jsx$6 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var a$5 = $m_Lcross_imp$DisplayObjectOps$().addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(($m_Lcross_imp$(), arg1), $this.pixiCenter__Lcross_pixi_Container());
+        jsx$6.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$5, new $c_Lcross_vec$Vec2d().init___D__D(0, 110.0));
+        var jsx$7 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var a$6 = $this.pixiTree__Lcross_pixi_Container();
+        $m_Lcross_imp$();
+        var v$1 = $this.treePosition$1;
+        jsx$7.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$6, new $c_Lcross_vec$Vec2d().init___D__D(v$1.x$1, v$1.y$1));
+        var jsx$8 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var a$7 = $this.pixiFlowers__Lcross_pixi_Container();
+        $m_Lcross_imp$();
+        var v$2 = $this.treePosition$1;
+        jsx$8.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$7, new $c_Lcross_vec$Vec2d().init___D__D(v$2.x$1, v$2.y$1));
+        var this$17 = $this.cross$stage$GameStage$$controller$f.model$1.tree$1;
+        var code$1 = new $c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1().init___Lcross_stage_GameStage($this);
+        $f_Lcross_data$Data__$$div$greater__s_PartialFunction__Lcross_data$Data(this$17, code$1);
         $this.log$1.info__T__V("[game stage] created")
       })
     })(this)), this.ec$1);
-    this.bitmap$0$1 = (((4 | this.bitmap$0$1) << 24) >> 24)
+    this.bitmap$0$1 = (((64 | this.bitmap$0$1) << 24) >> 24)
   };
   return this.create$1
 });
@@ -12766,6 +14095,7 @@ function $c_Lcross_stage_LoadingStage() {
   $c_O.call(this);
   this.pixiStage$1 = null;
   this.pixiBody$1 = null;
+  this.pixiStart$1 = null;
   this.create$1 = null;
   this.controller$1 = null;
   this.app$1 = null;
@@ -12782,6 +14112,9 @@ function $h_Lcross_stage_LoadingStage() {
   /*<skip>*/
 }
 $h_Lcross_stage_LoadingStage.prototype = $c_Lcross_stage_LoadingStage.prototype;
+$c_Lcross_stage_LoadingStage.prototype.pixiStart__Lcross_component_Button = (function() {
+  return (((((4 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiStart$lzycompute__p1__Lcross_component_Button() : this.pixiStart$1)
+});
 $c_Lcross_stage_LoadingStage.prototype.pixiBody$lzycompute__p1__Lcross_pixi_Container = (function() {
   if (((((2 & this.bitmap$0$1) << 24) >> 24) === 0)) {
     var jsx$1 = $m_Lcross_imp$ContainerOps$();
@@ -12800,9 +14133,6 @@ $c_Lcross_stage_LoadingStage.prototype.fadeIn__Lcross_animation$Animation = (fun
   var a = this.pixiBody__Lcross_pixi_Container();
   return new $c_Lcross_animation$FadeIn().init___Lcross_pixi_DisplayObject__Lcross_animation$Ease__s_concurrent_duration_FiniteDuration(a, $m_Lcross_animation$LinearEase$(), $m_Lcross_config$().AnimationDelay$1)
 });
-$c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$5__Lcross_pixi_Loader__Lcross_pixi_Resource__Lcross_spring$DoubleSpring__V = (function(load, res, progressSpring$1) {
-  progressSpring$1.target$1 = ($uD(load.progress) / 100)
-});
 $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$1__s_concurrent_Promise__V = (function(promise$1) {
   this.log$1.info__T__V("[loading stage] setting up...");
   var jsx$3 = $m_Lcross_imp$DisplayObjectOps$();
@@ -12814,7 +14144,7 @@ $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create
   var a = $m_Lcross_asset_ui$().asset$minusloading$minusdisabled$1;
   var a$1 = jsx$1.sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(a, this.app$1);
   var a$2 = jsx$2.anchorAtCenter$extension__Lcross_pixi_DisplayObject__Lcross_pixi_DisplayObject(a$1);
-  jsx$3.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$2, this.pixiBody__Lcross_pixi_Container());
+  var start = jsx$3.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$2, this.pixiBody__Lcross_pixi_Container());
   $m_Lcross_imp$();
   var jsx$6 = $m_Lcross_imp$DisplayObjectOps$();
   $m_Lcross_imp$();
@@ -12845,84 +14175,118 @@ $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create
   var a$9 = jsx$8.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$8, new $c_Lcross_vec$Vec2d().init___D__D(0.0, y));
   var a$10 = jsx$9.scaleYTo$extension__Lcross_pixi_DisplayObject__D__Lcross_pixi_DisplayObject(a$9, 0.0);
   a$6.mask = jsx$10.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$10, this.pixiBody__Lcross_pixi_Container());
-  var progressSpring = $as_Lcross_spring$DoubleSpring($m_Lcross_spring$().add__Lcross_spring$Updater__Lcross_spring$Updater(new $c_Lcross_spring$DoubleSpring().init___D__D__F1__D(0.0, 0.0, new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2$1, finish) {
+  var progressSpring = $as_Lcross_spring$DoubleSpring($m_Lcross_spring$().add__Lcross_spring$Updater__Lcross_spring$Updater(new $c_Lcross_spring$DoubleSpring().init___D__D__F1__D(0.0, 0.0, new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$2$1, finish, start$1) {
     return (function(s$2) {
       var s = $as_Lcross_spring$DoubleSpring(s$2);
       finish.mask.scale.y = ($doubleToInt((s.current$1 * this$2$1.buttonSize$1.y$1)) / this$2$1.buttonSize$1.y$1);
       if ((s.current$1 > 0.99)) {
+        var jsx$11 = $m_Lcross_imp$DisplayObjectOps$();
+        $m_Lcross_imp$();
+        var this$19 = this$2$1.pixiStart__Lcross_component_Button();
+        var code = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+          return (function(button$2) {
+            var button = $as_Lcross_component_Button(button$2);
+            $f_Lcross_component_Interactive__setEnabled__Z__Lcross_component_Interactive(button, false);
+            $this.controller$1.jumpToGame__V()
+          })
+        })(this$2$1));
+        var this$20 = $as_Lcross_component_Button($f_Lcross_component_Interactive__onClick__F1__Lcross_component_Interactive(this$19, code));
+        var a$11 = this$20.pixiContainer$1;
+        jsx$11.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$11, this$2$1.pixiBody__Lcross_pixi_Container());
         finish.mask.scale.y = 1.0;
+        finish.visible = false;
+        start$1.visible = false;
         $m_Lcross_spring$().remove__Lcross_spring$Updater__Lcross_spring$Updater(s)
       }
     })
-  })(this, a$6)), 0.25)));
-  var jsx$13 = $m_Lcross_asset_ui$().all$1;
-  var this$20 = $m_Lcross_asset_tree$().branches$1;
+  })(this, a$6, start)), 0.25)));
+  var jsx$16 = $m_Lcross_asset_ui$().all$1;
+  var this$23 = $m_Lcross_asset_tree$().branches$1;
   var f = (function(this$3$1) {
     return (function(b$2) {
       var b = $as_Lcross_mvc$TreeAsset(b$2);
       return b.asset$1
     })
   })(this);
-  var this$19 = $m_sci_List$();
-  var bf = this$19.ReusableCBFInstance$2;
+  var this$22 = $m_sci_List$();
+  var bf = this$22.ReusableCBFInstance$2;
   if ((bf === $m_sci_List$().ReusableCBFInstance$2)) {
-    if ((this$20 === $m_sci_Nil$())) {
-      var jsx$12 = $m_sci_Nil$()
+    if ((this$23 === $m_sci_Nil$())) {
+      var jsx$15 = $m_sci_Nil$()
     } else {
-      var arg1 = this$20.head__O();
+      var arg1 = this$23.head__O();
       var h = new $c_sci_$colon$colon().init___O__sci_List(f(arg1), $m_sci_Nil$());
       var t = h;
-      var rest = this$20.tail__sci_List();
+      var rest = this$23.tail__sci_List();
       while ((rest !== $m_sci_Nil$())) {
         var arg1$1 = rest.head__O();
         var nx = new $c_sci_$colon$colon().init___O__sci_List(f(arg1$1), $m_sci_Nil$());
         t.tl$5 = nx;
         t = nx;
-        var this$21 = rest;
-        rest = this$21.tail__sci_List()
+        var this$24 = rest;
+        rest = this$24.tail__sci_List()
       };
-      var jsx$12 = h
+      var jsx$15 = h
     }
   } else {
-    var b$1 = $f_sc_TraversableLike__builder$1__psc_TraversableLike__scg_CanBuildFrom__scm_Builder(this$20, bf);
-    var these = this$20;
+    var b$1 = $f_sc_TraversableLike__builder$1__psc_TraversableLike__scg_CanBuildFrom__scm_Builder(this$23, bf);
+    var these = this$23;
     while ((!these.isEmpty__Z())) {
       var arg1$2 = these.head__O();
       b$1.$$plus$eq__O__scm_Builder(f(arg1$2));
-      var this$22 = these;
-      these = this$22.tail__sci_List()
+      var this$25 = these;
+      these = this$25.tail__sci_List()
     };
-    var jsx$12 = b$1.result__O()
+    var jsx$15 = b$1.result__O()
   };
-  var jsx$11 = $as_sc_GenTraversableOnce(jsx$12);
-  var this$23 = $m_sci_List$();
-  var allAssets = $as_sci_List(jsx$13.$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(jsx$11, this$23.ReusableCBFInstance$2));
+  var jsx$14 = $as_sc_GenTraversableOnce(jsx$15);
+  var this$26 = $m_sci_List$();
+  var jsx$13 = $as_sci_List(jsx$16.$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(jsx$14, this$26.ReusableCBFInstance$2));
+  var this$27 = $m_Lcross_asset_flower$().flowers$1;
+  $m_sci_List$();
+  var b$3 = new $c_scm_ListBuffer().init___();
+  var these$1 = this$27;
+  while ((!these$1.isEmpty__Z())) {
+    var arg1$3 = these$1.head__O();
+    var xs = $as_sc_GenTraversableOnce(arg1$3).seq__sc_TraversableOnce();
+    b$3.$$plus$plus$eq__sc_TraversableOnce__scm_ListBuffer(xs);
+    var this$29 = these$1;
+    these$1 = this$29.tail__sci_List()
+  };
+  var jsx$12 = b$3.toList__sci_List();
+  var this$30 = $m_sci_List$();
+  var allAssets = $as_sci_List(jsx$13.$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O(jsx$12, this$30.ReusableCBFInstance$2));
   $m_Lcross_imp$AssetListOps$().resetAndAddToLoader$extension__sci_List__Lcross_pixi_Application__Lcross_pixi_Loader(($m_Lcross_imp$(), allAssets), this.app$1).on($m_Lcross_pixi_EventType$().Progress$1, (function(arg$outer, progressSpring$1) {
     return (function(arg1$2$1, arg2$2) {
-      arg$outer.cross$stage$LoadingStage$$$anonfun$create$5__Lcross_pixi_Loader__Lcross_pixi_Resource__Lcross_spring$DoubleSpring__V(arg1$2$1, arg2$2, progressSpring$1)
+      arg$outer.cross$stage$LoadingStage$$$anonfun$create$6__Lcross_pixi_Loader__Lcross_pixi_Resource__Lcross_spring$DoubleSpring__V(arg1$2$1, arg2$2, progressSpring$1)
     })
   })(this, progressSpring)).load((function(arg$outer$1, allAssets$1) {
     return (function() {
-      arg$outer$1.cross$stage$LoadingStage$$$anonfun$create$6__sci_List__V(allAssets$1)
+      arg$outer$1.cross$stage$LoadingStage$$$anonfun$create$7__sci_List__V(allAssets$1)
     })
   })(this, allAssets));
   this.log$1.info__T__V("[loading stage] created");
   $f_s_concurrent_Promise__success__O__s_concurrent_Promise(promise$1, (void 0))
 });
+$c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$6__Lcross_pixi_Loader__Lcross_pixi_Resource__Lcross_spring$DoubleSpring__V = (function(load, res, progressSpring$1) {
+  progressSpring$1.target$1 = ($uD(load.progress) / 100)
+});
 $c_Lcross_stage_LoadingStage.prototype.create__s_concurrent_Future = (function() {
-  return (((((4 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.create$lzycompute__p1__s_concurrent_Future() : this.create$1)
+  return (((((8 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.create$lzycompute__p1__s_concurrent_Future() : this.create$1)
 });
-$c_Lcross_stage_LoadingStage.prototype.pixiStage$lzycompute__p1__Lcross_pixi_Container = (function() {
-  if (((((1 & this.bitmap$0$1) << 24) >> 24) === 0)) {
-    this.pixiStage$1 = $m_Lcross_imp$().centerStage__Lcross_mvc$Controller__Lcross_pixi_Container(this.controller$1);
-    this.bitmap$0$1 = (((1 | this.bitmap$0$1) << 24) >> 24)
+$c_Lcross_stage_LoadingStage.prototype.pixiStart$lzycompute__p1__Lcross_component_Button = (function() {
+  if (((((4 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    var assetNormal = $m_Lcross_asset_ui$().asset$minusstart$minusnormal$1;
+    var assetHover = $m_Lcross_asset_ui$().asset$minusstart$minushover$1;
+    var assetPressed = $m_Lcross_asset_ui$().asset$minusstart$minuspressed$1;
+    var assetDisabled = $m_Lcross_asset_ui$().asset$minusstart$minusnormal$1;
+    var app = this.app$1;
+    this.pixiStart$1 = new $c_Lcross_component_Button().init___Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_mvc$Asset__Lcross_pixi_Application(assetNormal, assetHover, assetPressed, assetDisabled, app);
+    this.bitmap$0$1 = (((4 | this.bitmap$0$1) << 24) >> 24)
   };
-  return this.pixiStage$1
+  return this.pixiStart$1
 });
-$c_Lcross_stage_LoadingStage.prototype.pixiStage__Lcross_pixi_Container = (function() {
-  return (((((1 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiStage$lzycompute__p1__Lcross_pixi_Container() : this.pixiStage$1)
-});
-$c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$6__sci_List__V = (function(allAssets$1) {
+$c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create$7__sci_List__V = (function(allAssets$1) {
   this.log$1.info__T__V("[loading stage] assets loaded");
   $m_Lcross_imp$().nextFrame__F0__V(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, allAssets$1$1) {
     return (function() {
@@ -12989,6 +14353,16 @@ $c_Lcross_stage_LoadingStage.prototype.cross$stage$LoadingStage$$$anonfun$create
     })
   })(this, allAssets$1)))
 });
+$c_Lcross_stage_LoadingStage.prototype.pixiStage$lzycompute__p1__Lcross_pixi_Container = (function() {
+  if (((((1 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+    this.pixiStage$1 = $m_Lcross_imp$().centerStage__Lcross_mvc$Controller__Lcross_pixi_Container(this.controller$1);
+    this.bitmap$0$1 = (((1 | this.bitmap$0$1) << 24) >> 24)
+  };
+  return this.pixiStage$1
+});
+$c_Lcross_stage_LoadingStage.prototype.pixiStage__Lcross_pixi_Container = (function() {
+  return (((((1 & this.bitmap$0$1) << 24) >> 24) === 0) ? this.pixiStage$lzycompute__p1__Lcross_pixi_Container() : this.pixiStage$1)
+});
 $c_Lcross_stage_LoadingStage.prototype.toPixi__Lcross_pixi_DisplayObject = (function() {
   return this.toPixi$1
 });
@@ -13001,13 +14375,8 @@ $c_Lcross_stage_LoadingStage.prototype.init___Lcross_mvc$Controller__Lcross_pixi
   this.toPixi$1 = this.pixiStage__Lcross_pixi_Container();
   return this
 });
-$c_Lcross_stage_LoadingStage.prototype.fadeOut__Lcross_animation$Animation = (function() {
-  $m_Lcross_imp$();
-  var a = this.pixiBody__Lcross_pixi_Container();
-  return new $c_Lcross_animation$FadeOut().init___Lcross_pixi_DisplayObject__Lcross_animation$Ease__s_concurrent_duration_FiniteDuration(a, $m_Lcross_animation$LinearEase$(), $m_Lcross_config$().AnimationDelay$1)
-});
 $c_Lcross_stage_LoadingStage.prototype.create$lzycompute__p1__s_concurrent_Future = (function() {
-  if (((((4 & this.bitmap$0$1) << 24) >> 24) === 0)) {
+  if (((((8 & this.bitmap$0$1) << 24) >> 24) === 0)) {
     this.log$1.info__T__V("[loading stage] pre-loading...");
     var promise = new $c_s_concurrent_impl_Promise$DefaultPromise().init___();
     var jsx$1 = $m_Lcross_imp$AssetListOps$();
@@ -13023,9 +14392,14 @@ $c_Lcross_stage_LoadingStage.prototype.create$lzycompute__p1__s_concurrent_Futur
       })
     })(this, promise));
     this.create$1 = promise;
-    this.bitmap$0$1 = (((4 | this.bitmap$0$1) << 24) >> 24)
+    this.bitmap$0$1 = (((8 | this.bitmap$0$1) << 24) >> 24)
   };
   return this.create$1
+});
+$c_Lcross_stage_LoadingStage.prototype.fadeOut__Lcross_animation$Animation = (function() {
+  $m_Lcross_imp$();
+  var a = this.pixiBody__Lcross_pixi_Container();
+  return new $c_Lcross_animation$FadeOut().init___Lcross_pixi_DisplayObject__Lcross_animation$Ease__s_concurrent_duration_FiniteDuration(a, $m_Lcross_animation$LinearEase$(), $m_Lcross_config$().AnimationDelay$1)
 });
 var $d_Lcross_stage_LoadingStage = new $TypeData().initClass({
   Lcross_stage_LoadingStage: 0
@@ -13225,6 +14599,9 @@ function $h_Lcross_vec$Vec2i() {
   /*<skip>*/
 }
 $h_Lcross_vec$Vec2i.prototype = $c_Lcross_vec$Vec2i.prototype;
+$c_Lcross_vec$Vec2i.prototype.flip__Lcross_vec$Vec2i = (function() {
+  return new $c_Lcross_vec$Vec2i().init___I__I(((-this.x$1) | 0), ((-this.y$1) | 0))
+});
 $c_Lcross_vec$Vec2i.prototype.productPrefix__T = (function() {
   return "Vec2i"
 });
@@ -13259,16 +14636,19 @@ $c_Lcross_vec$Vec2i.prototype.productElement__I__O = (function(x$1) {
 $c_Lcross_vec$Vec2i.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lcross_vec$Vec2i.prototype.$$times__Lcross_vec$Vec2d__Lcross_vec$Vec2d = (function(v) {
-  return new $c_Lcross_vec$Vec2d().init___D__D((this.x$1 * v.x$1), (this.y$1 * v.y$1))
-});
 $c_Lcross_vec$Vec2i.prototype.init___I__I = (function(x, y) {
   this.x$1 = x;
   this.y$1 = y;
   return this
 });
+$c_Lcross_vec$Vec2i.prototype.$$times__Lcross_vec$Vec2d__Lcross_vec$Vec2d = (function(v) {
+  return new $c_Lcross_vec$Vec2d().init___D__D((this.x$1 * v.x$1), (this.y$1 * v.y$1))
+});
 $c_Lcross_vec$Vec2i.prototype.$$div__Lcross_vec$Vec2i__Lcross_vec$Vec2d = (function(v) {
   return new $c_Lcross_vec$Vec2d().init___D__D((this.x$1 / v.x$1), (this.y$1 / v.y$1))
+});
+$c_Lcross_vec$Vec2i.prototype.$$plus__Lcross_vec$Vec2i__Lcross_vec$Vec2i = (function(v) {
+  return new $c_Lcross_vec$Vec2i().init___I__I(((this.x$1 + v.x$1) | 0), ((this.y$1 + v.y$1) | 0))
 });
 $c_Lcross_vec$Vec2i.prototype.hashCode__I = (function() {
   var acc = (-889275714);
@@ -16636,6 +18016,112 @@ var $d_Lcross_spring$SpritePositionSpring = new $TypeData().initClass({
 });
 $c_Lcross_spring$SpritePositionSpring.prototype.$classData = $d_Lcross_spring$SpritePositionSpring;
 /** @constructor */
+function $c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1() {
+  $c_sr_AbstractPartialFunction.call(this);
+  this.$$outer$2 = null
+}
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype = new $h_sr_AbstractPartialFunction();
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.constructor = $c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1;
+/** @constructor */
+function $h_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1() {
+  /*<skip>*/
+}
+$h_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype = $c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype;
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.applyOrElse__s_Option__F1__O = (function(x1, $default) {
+  if ($is_s_Some(x1)) {
+    var x2 = $as_s_Some(x1);
+    var tree = $as_Lcross_mvc$TreeNode(x2.value$2);
+    var random = new $c_s_util_Random().init___();
+    var this$1 = this.$$outer$2.pixiSpawnTree__Lcross_component_Button();
+    $f_Lcross_component_Interactive__setEnabled__Z__Lcross_component_Interactive(this$1, true);
+    var jsx$1 = $m_Lcross_imp$ContainerOps$();
+    $m_Lcross_imp$();
+    var a = this.$$outer$2.pixiTree__Lcross_pixi_Container();
+    jsx$1.removeChildren$extension__Lcross_pixi_Container__Lcross_pixi_Container(a);
+    var jsx$2 = $m_Lcross_imp$ContainerOps$();
+    $m_Lcross_imp$();
+    var a$1 = this.$$outer$2.pixiFlowers__Lcross_pixi_Container();
+    jsx$2.removeChildren$extension__Lcross_pixi_Container__Lcross_pixi_Container(a$1);
+    this.rec$1__p2__Lcross_pixi_Container__Lcross_mvc$TreeNode__Lcross_vec$Vec2i__s_util_Random__V(this.$$outer$2.pixiTree__Lcross_pixi_Container(), tree, new $c_Lcross_vec$Vec2i().init___I__I(0, 0), random);
+    return (void 0)
+  } else {
+    return $default.apply__O__O(x1)
+  }
+});
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.init___Lcross_stage_GameStage = (function($$outer) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$2 = $$outer
+  };
+  return this
+});
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.rec$1__p2__Lcross_pixi_Container__Lcross_mvc$TreeNode__Lcross_vec$Vec2i__s_util_Random__V = (function(parent, node, offset, random$1) {
+  var position = node.asset$1.rootAnchor$1.flip__Lcross_vec$Vec2i().$$plus__Lcross_vec$Vec2i__Lcross_vec$Vec2i(node.asset$1.branchAnchor$1);
+  var jsx$1 = $m_Lcross_imp$DisplayObjectOps$();
+  $m_Lcross_imp$();
+  var a = $m_Lcross_imp$ContainerOps$().sub$extension__Lcross_pixi_Container__Lcross_pixi_Container(($m_Lcross_imp$(), parent));
+  var sub = jsx$1.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a, ($m_Lcross_imp$(), new $c_Lcross_vec$Vec2d().init___D__D(position.x$1, position.y$1)));
+  var jsx$4 = $m_Lcross_imp$DisplayObjectOps$();
+  $m_Lcross_imp$();
+  var jsx$3 = $m_Lcross_imp$DisplayObjectOps$();
+  $m_Lcross_imp$();
+  var jsx$2 = $m_Lcross_imp$AssetOps$();
+  $m_Lcross_imp$();
+  var a$1 = node.asset$1.asset$1;
+  var a$2 = jsx$2.sprite$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_Sprite(a$1, this.$$outer$2.cross$stage$GameStage$$app$f);
+  var a$3 = jsx$3.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$2, parent);
+  $m_Lcross_imp$();
+  var v = node.asset$1.rootAnchor$1.flip__Lcross_vec$Vec2i();
+  jsx$4.positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(a$3, new $c_Lcross_vec$Vec2d().init___D__D(v.x$1, v.y$1));
+  var this$8 = node.asset$1.flowerAnchors$1;
+  var these = this$8;
+  while ((!these.isEmpty__Z())) {
+    var arg1 = these.head__O();
+    var anchor = $as_Lcross_vec$Vec2i(arg1);
+    var this$9 = new $c_Lcross_stage_GameStage$FlowerCluster().init___J__Lcross_mvc$Controller__Lcross_pixi_Application(random$1.self$1.nextLong__J(), this.$$outer$2.cross$stage$GameStage$$controller$f, this.$$outer$2.cross$stage$GameStage$$app$f);
+    var arg1$1 = this$9.pixiContainer__Lcross_pixi_Container();
+    var absolutePosition = offset.$$plus__Lcross_vec$Vec2i__Lcross_vec$Vec2i(node.asset$1.rootAnchor$1.flip__Lcross_vec$Vec2i()).$$plus__Lcross_vec$Vec2i__Lcross_vec$Vec2i(anchor);
+    var jsx$5 = $m_Lcross_imp$DisplayObjectOps$();
+    $m_Lcross_imp$();
+    var a$4 = $m_Lcross_imp$DisplayObjectOps$().positionAt$extension__Lcross_pixi_DisplayObject__Lcross_vec$Vec2d__Lcross_pixi_DisplayObject(($m_Lcross_imp$(), arg1$1), ($m_Lcross_imp$(), new $c_Lcross_vec$Vec2d().init___D__D(absolutePosition.x$1, absolutePosition.y$1)));
+    jsx$5.addTo$extension__Lcross_pixi_DisplayObject__Lcross_pixi_Container__Lcross_pixi_DisplayObject(a$4, this.$$outer$2.pixiFlowers__Lcross_pixi_Container());
+    this$9.open__V();
+    var this$13 = these;
+    these = this$13.tail__sci_List()
+  };
+  var this$14 = node.branches$1;
+  var these$1 = this$14;
+  while ((!these$1.isEmpty__Z())) {
+    var arg1$2 = these$1.head__O();
+    var b = $as_Lcross_mvc$TreeNode(arg1$2);
+    this.rec$1__p2__Lcross_pixi_Container__Lcross_mvc$TreeNode__Lcross_vec$Vec2i__s_util_Random__V(sub, b, offset.$$plus__Lcross_vec$Vec2i__Lcross_vec$Vec2i(position), random$1);
+    var this$15 = these$1;
+    these$1 = this$15.tail__sci_List()
+  }
+});
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.isDefinedAt__O__Z = (function(x) {
+  return this.isDefinedAt__s_Option__Z($as_s_Option(x))
+});
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.applyOrElse__O__F1__O = (function(x, $default) {
+  return this.applyOrElse__s_Option__F1__O($as_s_Option(x), $default)
+});
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.isDefinedAt__s_Option__Z = (function(x1) {
+  return $is_s_Some(x1)
+});
+var $d_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1 = new $TypeData().initClass({
+  Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1: 0
+}, false, "cross.stage.GameStage$$anonfun$$nestedInanonfun$create$1$1", {
+  Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1: 1,
+  sr_AbstractPartialFunction: 1,
+  O: 1,
+  F1: 1,
+  s_PartialFunction: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1.prototype.$classData = $d_Lcross_stage_GameStage$$anonfun$$nestedInanonfun$create$1$1;
+/** @constructor */
 function $c_Lcross_ui$$anonfun$bindStageTransitions$1() {
   $c_sr_AbstractPartialFunction.call(this);
   this.stages$1$2 = null;
@@ -18710,6 +20196,91 @@ var $d_Lcross_spring$$anonfun$$nestedInanonfun$load$1$1 = new $TypeData().initCl
   Ljava_io_Serializable: 1
 });
 $c_Lcross_spring$$anonfun$$nestedInanonfun$load$1$1.prototype.$classData = $d_Lcross_spring$$anonfun$$nestedInanonfun$load$1$1;
+/** @constructor */
+function $c_Lcross_stage_GameStage$Flower$$anonfun$open$1() {
+  $c_sr_AbstractPartialFunction$mcVJ$sp.call(this);
+  this.$$outer$3 = null;
+  this.start$1$3 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong()
+}
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype = new $h_sr_AbstractPartialFunction$mcVJ$sp();
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.constructor = $c_Lcross_stage_GameStage$Flower$$anonfun$open$1;
+/** @constructor */
+function $h_Lcross_stage_GameStage$Flower$$anonfun$open$1() {
+  /*<skip>*/
+}
+$h_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype = $c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype;
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.applyOrElse__J__F1__O = (function(x1, $default) {
+  if ((!this.$$outer$3.opened$1)) {
+    var b = this.start$1$3;
+    var alo = x1.lo$2;
+    var ahi = x1.hi$2;
+    var bhi = b.hi$2;
+    var lo = ((alo - b.lo$2) | 0);
+    var offset = ((lo / 3) | 0);
+    if ((offset >= 0)) {
+      var jsx$4 = $m_Lcross_imp$DisplayObjectOps$();
+      $m_Lcross_imp$();
+      var a = this.$$outer$3.pixiSprite__Lcross_pixi_Sprite();
+      var jsx$3 = jsx$4.visibleTo$extension__Lcross_pixi_DisplayObject__Z__Lcross_pixi_DisplayObject(a, true);
+      var jsx$2 = $m_Lcross_imp$AssetOps$();
+      $m_Lcross_imp$();
+      var this$3 = this.$$outer$3.cross$stage$GameStage$Flower$$assets$f;
+      var this$4 = new $c_s_PartialFunction$Lifted().init___s_PartialFunction(this$3);
+      var this$5 = this$4.apply__O__s_Option(offset);
+      if (this$5.isEmpty__Z()) {
+        var this$6 = this.$$outer$3.cross$stage$GameStage$Flower$$assets$f;
+        var jsx$1 = $as_Lcross_mvc$Asset($f_sc_LinearSeqOptimized__last__O(this$6))
+      } else {
+        var jsx$1 = this$5.get__O()
+      };
+      var a$1 = $as_Lcross_mvc$Asset(jsx$1);
+      jsx$3.texture = jsx$2.texture$extension__Lcross_mvc$Asset__Lcross_pixi_Application__Lcross_pixi_BaseTexture(a$1, this.$$outer$3.cross$stage$GameStage$Flower$$app$f);
+      var this$8 = this.$$outer$3.cross$stage$GameStage$Flower$$assets$f;
+      if ((offset >= $f_sc_LinearSeqOptimized__length__I(this$8))) {
+        this.$$outer$3.opened$1 = true;
+        return (void 0)
+      } else {
+        return (void 0)
+      }
+    } else {
+      return (void 0)
+    }
+  } else {
+    return $default.apply__O__O(x1)
+  }
+});
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.isDefinedAt__J__Z = (function(x1) {
+  return (!this.$$outer$3.opened$1)
+});
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.init___Lcross_stage_GameStage$Flower__J = (function($$outer, start$1) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$3 = $$outer
+  };
+  this.start$1$3 = start$1;
+  return this
+});
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.isDefinedAt__O__Z = (function(x) {
+  return this.isDefinedAt__J__Z($uJ(x))
+});
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.applyOrElse__O__F1__O = (function(x, $default) {
+  return this.applyOrElse__J__F1__O($uJ(x), $default)
+});
+var $d_Lcross_stage_GameStage$Flower$$anonfun$open$1 = new $TypeData().initClass({
+  Lcross_stage_GameStage$Flower$$anonfun$open$1: 0
+}, false, "cross.stage.GameStage$Flower$$anonfun$open$1", {
+  Lcross_stage_GameStage$Flower$$anonfun$open$1: 1,
+  sr_AbstractPartialFunction$mcVJ$sp: 1,
+  sr_AbstractPartialFunction: 1,
+  O: 1,
+  F1: 1,
+  s_PartialFunction: 1,
+  s_Function1$mcVJ$sp: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lcross_stage_GameStage$Flower$$anonfun$open$1.prototype.$classData = $d_Lcross_stage_GameStage$Flower$$anonfun$open$1;
 /** @constructor */
 function $c_jl_JSConsoleBasedPrintStream() {
   $c_Ljava_io_PrintStream.call(this);
@@ -23837,6 +25408,141 @@ function $h_scm_AbstractIterable() {
   /*<skip>*/
 }
 $h_scm_AbstractIterable.prototype = $c_scm_AbstractIterable.prototype;
+/** @constructor */
+function $c_sjs_js_ArrayOps() {
+  $c_O.call(this);
+  this.scala$scalajs$js$ArrayOps$$array$f = null
+}
+$c_sjs_js_ArrayOps.prototype = new $h_O();
+$c_sjs_js_ArrayOps.prototype.constructor = $c_sjs_js_ArrayOps;
+/** @constructor */
+function $h_sjs_js_ArrayOps() {
+  /*<skip>*/
+}
+$h_sjs_js_ArrayOps.prototype = $c_sjs_js_ArrayOps.prototype;
+$c_sjs_js_ArrayOps.prototype.seq__sc_TraversableOnce = (function() {
+  return this.seq__sc_IndexedSeq()
+});
+$c_sjs_js_ArrayOps.prototype.seq__sc_IndexedSeq = (function() {
+  return new $c_sjs_js_WrappedArray().init___sjs_js_Array(this.scala$scalajs$js$ArrayOps$$array$f)
+});
+$c_sjs_js_ArrayOps.prototype.init___ = (function() {
+  $c_sjs_js_ArrayOps.prototype.init___sjs_js_Array.call(this, []);
+  return this
+});
+$c_sjs_js_ArrayOps.prototype.head__O = (function() {
+  return $f_sc_IndexedSeqOptimized__head__O(this)
+});
+$c_sjs_js_ArrayOps.prototype.apply__I__O = (function(index) {
+  return this.scala$scalajs$js$ArrayOps$$array$f[index]
+});
+$c_sjs_js_ArrayOps.prototype.lengthCompare__I__I = (function(len) {
+  return $f_sc_IndexedSeqOptimized__lengthCompare__I__I(this, len)
+});
+$c_sjs_js_ArrayOps.prototype.sameElements__sc_GenIterable__Z = (function(that) {
+  return $f_sc_IndexedSeqOptimized__sameElements__sc_GenIterable__Z(this, that)
+});
+$c_sjs_js_ArrayOps.prototype.toList__sci_List = (function() {
+  return $f_sc_IndexedSeqOptimized__toList__sci_List(this)
+});
+$c_sjs_js_ArrayOps.prototype.isEmpty__Z = (function() {
+  return $f_sc_IndexedSeqOptimized__isEmpty__Z(this)
+});
+$c_sjs_js_ArrayOps.prototype.thisCollection__sc_Traversable = (function() {
+  return this.thisCollection__scm_IndexedSeq()
+});
+$c_sjs_js_ArrayOps.prototype.equals__O__Z = (function(that) {
+  return $f_sc_GenSeqLike__equals__O__Z(this, that)
+});
+$c_sjs_js_ArrayOps.prototype.mkString__T__T__T__T = (function(start, sep, end) {
+  return $f_sc_TraversableOnce__mkString__T__T__T__T(this, start, sep, end)
+});
+$c_sjs_js_ArrayOps.prototype.$$plus$eq__O__scg_Growable = (function(elem) {
+  this.scala$scalajs$js$ArrayOps$$array$f.push(elem);
+  return this
+});
+$c_sjs_js_ArrayOps.prototype.thisCollection__scm_IndexedSeq = (function() {
+  var repr = this.scala$scalajs$js$ArrayOps$$array$f;
+  return new $c_sjs_js_WrappedArray().init___sjs_js_Array(repr)
+});
+$c_sjs_js_ArrayOps.prototype.toString__T = (function() {
+  return $f_sc_TraversableLike__toString__T(this)
+});
+$c_sjs_js_ArrayOps.prototype.foreach__F1__V = (function(f) {
+  $f_sc_IndexedSeqOptimized__foreach__F1__V(this, f)
+});
+$c_sjs_js_ArrayOps.prototype.size__I = (function() {
+  return $uI(this.scala$scalajs$js$ArrayOps$$array$f.length)
+});
+$c_sjs_js_ArrayOps.prototype.result__O = (function() {
+  return this.scala$scalajs$js$ArrayOps$$array$f
+});
+$c_sjs_js_ArrayOps.prototype.distinct__O = (function() {
+  return $f_sc_SeqLike__distinct__O(this)
+});
+$c_sjs_js_ArrayOps.prototype.iterator__sc_Iterator = (function() {
+  return new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, $uI(this.scala$scalajs$js$ArrayOps$$array$f.length))
+});
+$c_sjs_js_ArrayOps.prototype.sizeHintBounded__I__sc_TraversableLike__V = (function(size, boundingColl) {
+  $f_scm_Builder__sizeHintBounded__I__sc_TraversableLike__V(this, size, boundingColl)
+});
+$c_sjs_js_ArrayOps.prototype.length__I = (function() {
+  return $uI(this.scala$scalajs$js$ArrayOps$$array$f.length)
+});
+$c_sjs_js_ArrayOps.prototype.sizeHintIfCheap__I = (function() {
+  return $uI(this.scala$scalajs$js$ArrayOps$$array$f.length)
+});
+$c_sjs_js_ArrayOps.prototype.toStream__sci_Stream = (function() {
+  var this$1 = new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, $uI(this.scala$scalajs$js$ArrayOps$$array$f.length));
+  return $f_sc_Iterator__toStream__sci_Stream(this$1)
+});
+$c_sjs_js_ArrayOps.prototype.thisCollection__sc_Seq = (function() {
+  return this.thisCollection__scm_IndexedSeq()
+});
+$c_sjs_js_ArrayOps.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = (function(b, start, sep, end) {
+  return $f_sc_TraversableOnce__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
+});
+$c_sjs_js_ArrayOps.prototype.repr__O = (function() {
+  return this.scala$scalajs$js$ArrayOps$$array$f
+});
+$c_sjs_js_ArrayOps.prototype.$$plus$eq__O__scm_Builder = (function(elem) {
+  this.scala$scalajs$js$ArrayOps$$array$f.push(elem);
+  return this
+});
+$c_sjs_js_ArrayOps.prototype.copyToArray__O__I__I__V = (function(xs, start, len) {
+  $f_sc_IndexedSeqOptimized__copyToArray__O__I__I__V(this, xs, start, len)
+});
+$c_sjs_js_ArrayOps.prototype.sizeHint__I__V = (function(size) {
+  /*<skip>*/
+});
+$c_sjs_js_ArrayOps.prototype.hashCode__I = (function() {
+  return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this.seq__sc_IndexedSeq())
+});
+$c_sjs_js_ArrayOps.prototype.toMap__s_Predef$$less$colon$less__sci_Map = (function(ev) {
+  var b = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
+  var i = 0;
+  var len = $uI(this.scala$scalajs$js$ArrayOps$$array$f.length);
+  while ((i < len)) {
+    var index = i;
+    var arg1 = this.scala$scalajs$js$ArrayOps$$array$f[index];
+    b.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
+    i = ((1 + i) | 0)
+  };
+  return $as_sci_Map(b.elems$1)
+});
+$c_sjs_js_ArrayOps.prototype.init___sjs_js_Array = (function(array) {
+  this.scala$scalajs$js$ArrayOps$$array$f = array;
+  return this
+});
+$c_sjs_js_ArrayOps.prototype.newBuilder__scm_Builder = (function() {
+  return new $c_sjs_js_ArrayOps().init___()
+});
+$c_sjs_js_ArrayOps.prototype.$$plus$plus$eq__sc_TraversableOnce__scg_Growable = (function(xs) {
+  return $f_scg_Growable__$$plus$plus$eq__sc_TraversableOnce__scg_Growable(this, xs)
+});
+$c_sjs_js_ArrayOps.prototype.stringPrefix__T = (function() {
+  return $f_sc_TraversableLike__stringPrefix__T(this)
+});
 function $is_sjs_js_ArrayOps(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sjs_js_ArrayOps)))
 }
@@ -23849,6 +25555,33 @@ function $isArrayOf_sjs_js_ArrayOps(obj, depth) {
 function $asArrayOf_sjs_js_ArrayOps(obj, depth) {
   return (($isArrayOf_sjs_js_ArrayOps(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.scalajs.js.ArrayOps;", depth))
 }
+var $d_sjs_js_ArrayOps = new $TypeData().initClass({
+  sjs_js_ArrayOps: 0
+}, false, "scala.scalajs.js.ArrayOps", {
+  sjs_js_ArrayOps: 1,
+  O: 1,
+  scm_ArrayLike: 1,
+  scm_IndexedSeqOptimized: 1,
+  scm_IndexedSeqLike: 1,
+  sc_IndexedSeqLike: 1,
+  sc_SeqLike: 1,
+  sc_IterableLike: 1,
+  s_Equals: 1,
+  sc_TraversableLike: 1,
+  scg_HasNewBuilder: 1,
+  scg_FilterMonadic: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1,
+  sc_GenTraversableLike: 1,
+  sc_Parallelizable: 1,
+  sc_GenIterableLike: 1,
+  sc_GenSeqLike: 1,
+  sc_IndexedSeqOptimized: 1,
+  scm_Builder: 1,
+  scg_Growable: 1,
+  scg_Clearable: 1
+});
+$c_sjs_js_ArrayOps.prototype.$classData = $d_sjs_js_ArrayOps;
 function $is_sc_IndexedSeq(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_IndexedSeq)))
 }
@@ -24939,11 +26672,11 @@ $c_sci_ListSet$Node.prototype.init___sci_ListSet__O = (function($$outer, elem) {
   };
   return this
 });
-$c_sci_ListSet$Node.prototype.elem__O = (function() {
-  return this.elem$5
-});
 $c_sci_ListSet$Node.prototype.contains__O__Z = (function(e) {
   return this.containsInternal__p5__sci_ListSet__O__Z(this, e)
+});
+$c_sci_ListSet$Node.prototype.elem__O = (function() {
+  return this.elem$5
 });
 $c_sci_ListSet$Node.prototype.containsInternal__p5__sci_ListSet__O__Z = (function(n, e) {
   _containsInternal: while (true) {
@@ -28236,20 +29969,20 @@ function $h_sci_$colon$colon() {
   /*<skip>*/
 }
 $h_sci_$colon$colon.prototype = $c_sci_$colon$colon.prototype;
-$c_sci_$colon$colon.prototype.head__O = (function() {
-  return this.head$5
-});
 $c_sci_$colon$colon.prototype.productPrefix__T = (function() {
   return "::"
+});
+$c_sci_$colon$colon.prototype.head__O = (function() {
+  return this.head$5
 });
 $c_sci_$colon$colon.prototype.productArity__I = (function() {
   return 2
 });
-$c_sci_$colon$colon.prototype.tail__sci_List = (function() {
-  return this.tl$5
-});
 $c_sci_$colon$colon.prototype.isEmpty__Z = (function() {
   return false
+});
+$c_sci_$colon$colon.prototype.tail__sci_List = (function() {
+  return this.tl$5
 });
 $c_sci_$colon$colon.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
@@ -28343,23 +30076,23 @@ function $h_sci_Nil$() {
   /*<skip>*/
 }
 $h_sci_Nil$.prototype = $c_sci_Nil$.prototype;
-$c_sci_Nil$.prototype.productPrefix__T = (function() {
-  return "Nil"
+$c_sci_Nil$.prototype.init___ = (function() {
+  return this
 });
 $c_sci_Nil$.prototype.head__O = (function() {
   this.head__sr_Nothing$()
 });
-$c_sci_Nil$.prototype.init___ = (function() {
-  return this
+$c_sci_Nil$.prototype.productPrefix__T = (function() {
+  return "Nil"
 });
 $c_sci_Nil$.prototype.productArity__I = (function() {
   return 0
 });
-$c_sci_Nil$.prototype.isEmpty__Z = (function() {
-  return true
-});
 $c_sci_Nil$.prototype.tail__sci_List = (function() {
   throw new $c_jl_UnsupportedOperationException().init___T("tail of empty list")
+});
+$c_sci_Nil$.prototype.isEmpty__Z = (function() {
+  return true
 });
 $c_sci_Nil$.prototype.equals__O__Z = (function(that) {
   if ($is_sc_GenSeq(that)) {
@@ -29842,12 +31575,12 @@ $c_scm_WrappedArray$ofShort.prototype.apply__O__O = (function(v1) {
 $c_scm_WrappedArray$ofShort.prototype.update__I__S__V = (function(index, elem) {
   this.array$6.set(index, elem)
 });
-$c_scm_WrappedArray$ofShort.prototype.update__I__O__V = (function(index, elem) {
-  this.update__I__S__V(index, $uS(elem))
-});
 $c_scm_WrappedArray$ofShort.prototype.init___AS = (function(array) {
   this.array$6 = array;
   return this
+});
+$c_scm_WrappedArray$ofShort.prototype.update__I__O__V = (function(index, elem) {
+  this.update__I__S__V(index, $uS(elem))
 });
 $c_scm_WrappedArray$ofShort.prototype.equals__O__Z = (function(that) {
   if ($is_scm_WrappedArray$ofShort(that)) {
@@ -29866,13 +31599,13 @@ $c_scm_WrappedArray$ofShort.prototype.elemTag__s_reflect_ClassTag = (function() 
 $c_scm_WrappedArray$ofShort.prototype.array__O = (function() {
   return this.array$6
 });
-$c_scm_WrappedArray$ofShort.prototype.apply__I__S = (function(index) {
-  return this.array$6.get(index)
-});
 $c_scm_WrappedArray$ofShort.prototype.hashCode__I = (function() {
   var this$1 = $m_s_util_hashing_MurmurHash3$();
   var a = this.array$6;
   return this$1.arrayHash$mSc$sp__AS__I__I(a, this$1.seqSeed$2)
+});
+$c_scm_WrappedArray$ofShort.prototype.apply__I__S = (function(index) {
+  return this.array$6.get(index)
 });
 function $is_scm_WrappedArray$ofShort(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.scm_WrappedArray$ofShort)))
