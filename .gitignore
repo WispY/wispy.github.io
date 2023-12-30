@@ -1,1 +1,14 @@
-.idea
+# WebStorm
+.idea/*
+
+# VisualStudioCode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+.vs/*
+
+# VisualStudioCode Patch
+# Ignore all local history of files
+.history
+.ionide
